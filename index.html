@@ -1,0 +1,2509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Normal Prices Registry</title>
+    <style>
+        :root {
+            --matas-navy: #8ca765;
+            --matas-blue: #65a765;
+            --matas-light-blue: #90EE90;
+            --matas-white: #ffffff;
+            --matas-light-gray: #808080;
+            --matas-gray: #6c757d;
+            --matas-text: #333333;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: var(--matas-white);
+            min-height: 100vh;
+            color: var(--matas-text);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 30px,
+                    rgba(74, 144, 194, 0.08) 30px,
+                    rgba(74, 144, 194, 0.08) 60px
+                );
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--matas-white);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 41, 69, 0.1);
+            border: 1px solid var(--matas-light-blue);
+        }
+        
+        .header h1 {
+            margin: 0 0 15px 0;
+            color: var(--matas-navy);
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header p {
+            margin: 0;
+            color: var(--matas-gray);
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .controls {
+            background: var(--matas-white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 41, 69, 0.08);
+            margin-bottom: 25px;
+            border: 1px solid var(--matas-light-blue);
+        }
+        
+        .controls-row {
+            display: grid;
+            grid-template-columns: 1fr auto auto auto auto auto;
+            gap: 12px;
+            align-items: end;
+        }
+
+        .search-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .search-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--matas-blue);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            padding-left: 2px;
+        }
+        
+        .filter-select {
+            padding: 12px 18px;
+            border: 2px solid var(--matas-light-blue);
+            border-radius: 12px;
+            font-size: 15px;
+            background: var(--matas-white);
+            color: var(--matas-text);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-width: 150px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px top 50%;
+            background-size: 12px auto;
+            padding-right: 30px;
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--matas-blue);
+            box-shadow: 0 0 0 3px rgba(74, 144, 194, 0.15);
+            transform: translateY(-1px);
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 12px 18px;
+            border: 2px solid var(--matas-light-blue);
+            border-radius: 12px;
+            font-size: 15px;
+            background: var(--matas-white);
+            color: var(--matas-text);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--matas-blue);
+            box-shadow: 0 0 0 3px rgba(74, 144, 194, 0.15);
+            transform: translateY(-1px);
+        }
+        
+        .load-button, .sync-button {
+            background: var(--matas-navy);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .load-button:hover, .sync-button:hover { 
+            background: var(--matas-blue);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 41, 69, 0.3);
+        }
+        
+        .load-button:disabled, .sync-button:disabled {
+            background: var(--matas-gray);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .load-button:disabled::before, .sync-button:disabled::before {
+            opacity: 0;
+        }
+        
+        .status-bar {
+            margin-top: 10px;
+            color: #7f8c8d;
+            font-size: 13px;
+        }
+        
+        .table-container {
+            background: var(--matas-white);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 41, 69, 0.08);
+            overflow: auto;
+            border: 1px solid var(--matas-light-blue);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            background: var(--matas-navy);
+            color: white;
+            padding: 16px 12px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        td {
+            padding: 14px 12px;
+            border-bottom: 1px solid rgba(168, 208, 240, 0.2);
+            white-space: nowrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        tr:hover {
+            background: linear-gradient(90deg, rgba(168, 208, 240, 0.1), rgba(255, 179, 198, 0.1));
+        }
+
+        /* Product link styling */
+        td a {
+            color: var(--matas-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        td a:hover {
+            color: var(--matas-navy);
+            text-decoration: underline;
+            text-decoration-color: var(--matas-coral);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 3px;
+        }
+
+        td a:active {
+            color: var(--matas-coral);
+        }
+        
+        .error {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+        
+        .pagination {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 12px;
+        }
+        
+        .pagination button {
+            padding: 6px 10px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .pagination button:disabled {
+            color: #aaa;
+            cursor: not-allowed;
+            background: #f6f6f6;
+        }
+        
+        .price-input {
+            width: 120px;
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .row-dirty {
+            background-color: #fffbea;
+        }
+        
+        .cell-error {
+            outline: 2px solid #e74c3c;
+            background: #fdecea;
+        }
+        
+        .thumb {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #eee;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .thumb:hover {
+            transform: scale(1.1);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(4px);
+        }
+        
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+        
+            .modal-close {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                font-size: 28px;
+                font-weight: bold;
+                color: #aaa;
+                cursor: pointer;
+                background: none;
+                border: none;
+                padding: 0;
+                width: 44px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transition: all 0.2s ease;
+            }
+        
+        .modal-close:hover {
+            color: #000;
+        }
+
+        /* Authentication styles */
+        .auth-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: var(--matas-white);
+            position: relative;
+        }
+
+        .auth-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 30px,
+                    rgba(74, 144, 194, 0.08) 30px,
+                    rgba(74, 144, 194, 0.08) 60px
+                );
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .auth-card {
+            background: var(--matas-white);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 41, 69, 0.15);
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            border: 1px solid var(--matas-light-blue);
+        }
+
+        .auth-card h1 {
+            margin: 0 0 15px 0;
+            color: var(--matas-navy);
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-card p {
+            margin: 0 0 35px 0;
+            color: var(--matas-gray);
+            font-size: 1rem;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .token-input {
+            padding: 16px 20px;
+            border: 2px solid var(--matas-light-blue);
+            border-radius: 14px;
+            font-size: 15px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            transition: all 0.3s ease;
+            background: var(--matas-white);
+            color: var(--matas-text);
+        }
+
+        .token-input:focus {
+            outline: none;
+            border-color: var(--matas-blue);
+            box-shadow: 0 0 0 4px rgba(74, 144, 194, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .token-input.error {
+            border-color: var(--matas-coral);
+            background-color: rgba(255, 107, 138, 0.05);
+            box-shadow: 0 0 0 4px rgba(255, 107, 138, 0.15);
+        }
+
+        .auth-button {
+            background: var(--matas-navy);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .auth-button:hover {
+            background: var(--matas-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 41, 69, 0.3);
+        }
+
+        .auth-button:disabled {
+            background: var(--matas-gray);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .auth-button:disabled::before {
+            opacity: 0;
+        }
+
+        .auth-error {
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .auth-loading {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .main-app {
+            display: none;
+        }
+
+        .main-app.authenticated {
+            display: block;
+        }
+
+        .logout-button {
+            background-color: var(--matas-gray);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-left: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .logout-button:hover {
+            background-color: var(--matas-navy);
+            transform: translateY(-1px);
+        }
+
+        .debug-info {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        /* Mobile and Tablet Responsive Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+                margin: 0;
+            }
+
+            .header {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .controls {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .controls-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .filter-select {
+                width: 100%;
+                padding: 14px 16px;
+                font-size: 16px;
+                border-radius: 10px;
+                min-height: 48px;
+            }
+
+            .search-input {
+                padding: 14px 16px;
+                font-size: 16px; /* Prevents zoom on iOS */
+                border-radius: 10px;
+            }
+
+            .load-button, .sync-button {
+                width: 100%;
+                padding: 14px 20px;
+                font-size: 16px;
+                border-radius: 10px;
+            }
+
+            .status-bar {
+                font-size: 12px;
+                margin-top: 15px;
+            }
+
+            #keyboardHints {
+                display: none; /* Hide keyboard hints on mobile */
+            }
+
+            /* Mobile table styling */
+            .table-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                border-radius: 8px;
+            }
+
+            table {
+                min-width: 600px; /* Ensure table doesn't get too compressed */
+                font-size: 14px;
+            }
+
+            /* Mobile-specific column widths */
+            .mobile-device table th:first-child,
+            .mobile-device table td:first-child {
+                width: 60px; /* Image column */
+                min-width: 60px;
+            }
+
+            .mobile-device table th:nth-child(2),
+            .mobile-device table td:nth-child(2) {
+                min-width: 120px; /* Product column */
+                max-width: 200px;
+                word-wrap: break-word;
+                white-space: normal;
+                line-height: 1.3;
+            }
+
+            .mobile-device table th:nth-child(3),
+            .mobile-device table td:nth-child(3) {
+                width: 100px; /* Price column */
+                min-width: 100px;
+            }
+
+            .mobile-device table th:nth-child(4),
+            .mobile-device table td:nth-child(4) {
+                min-width: 80px; /* Brand column */
+                max-width: 120px;
+                word-wrap: break-word;
+                white-space: normal;
+                line-height: 1.3;
+            }
+
+            .mobile-device table th:nth-child(5),
+            .mobile-device table td:nth-child(5) {
+                min-width: 100px; /* Category column */
+                max-width: 150px;
+                word-wrap: break-word;
+                white-space: normal;
+                line-height: 1.3;
+            }
+
+            th {
+                padding: 12px 8px;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+
+            td {
+                padding: 12px 8px;
+                font-size: 14px;
+            }
+
+            .price-input {
+                width: 80px;
+                padding: 8px 6px;
+                font-size: 14px;
+                border-radius: 6px;
+                border: 2px solid var(--matas-light-blue);
+            }
+
+            .price-input:focus {
+                border-color: var(--matas-blue);
+                box-shadow: 0 0 0 2px rgba(74, 144, 194, 0.15);
+            }
+
+            .thumb {
+                width: 32px;
+                height: 32px;
+            }
+
+            .pagination {
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+                padding: 15px;
+            }
+
+            .pagination button {
+                padding: 12px 16px;
+                font-size: 16px;
+                border-radius: 8px;
+                min-height: 44px; /* Apple touch target size */
+            }
+
+            .pagination span {
+                text-align: center;
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+
+            /* Authentication mobile styles */
+            .auth-container {
+                padding: 20px;
+            }
+
+            .auth-card {
+                padding: 30px 20px;
+                max-width: 100%;
+                border-radius: 12px;
+            }
+
+            .auth-card h1 {
+                font-size: 1.8rem;
+            }
+
+            .token-input {
+                padding: 16px 18px;
+                font-size: 16px; /* Prevents zoom on iOS */
+                border-radius: 12px;
+            }
+
+            .auth-button {
+                padding: 16px 24px;
+                font-size: 16px;
+                border-radius: 10px;
+                min-height: 48px;
+            }
+
+            .logout-button {
+                padding: 10px 14px;
+                font-size: 14px;
+                margin-left: 0;
+                margin-top: 10px;
+                display: block;
+                width: auto;
+            }
+
+            /* Modal mobile styles */
+            .modal-content {
+                margin: 10px;
+                padding: 15px;
+                max-width: calc(100% - 20px);
+                max-height: calc(100% - 20px);
+                border-radius: 12px;
+            }
+
+            .modal-image {
+                max-height: 70vh;
+            }
+
+            .modal-close {
+                top: 5px;
+                right: 10px;
+                font-size: 24px;
+                width: 48px;
+                height: 48px;
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                color: #666;
+                min-height: 48px;
+                min-width: 48px;
+            }
+
+            .modal-close:hover {
+                background: rgba(0, 0, 0, 0.2);
+                color: #333;
+            }
+        }
+
+        /* Tablet specific styles */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            body {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .controls {
+                padding: 20px;
+            }
+
+            .controls-row {
+                grid-template-columns: 1fr auto auto auto;
+                gap: 15px;
+            }
+
+            .search-input {
+                font-size: 16px;
+            }
+
+            .load-button, .sync-button {
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+
+            table {
+                font-size: 15px;
+            }
+
+            th {
+                padding: 14px 10px;
+                font-size: 13px;
+            }
+
+            td {
+                padding: 13px 10px;
+            }
+
+            .price-input {
+                width: 100px;
+                padding: 8px 10px;
+                font-size: 15px;
+            }
+
+            .pagination button {
+                padding: 10px 16px;
+                font-size: 15px;
+                min-height: 42px;
+            }
+        }
+
+        /* Touch-friendly enhancements for all mobile devices */
+        @media (hover: none) and (pointer: coarse) {
+            /* Increase touch targets */
+            button, input, select, textarea, a {
+                min-height: 44px;
+            }
+
+            .load-button, .sync-button, .auth-button {
+                min-height: 48px;
+            }
+
+            /* Remove hover effects on touch devices */
+            .load-button:hover, .sync-button:hover, .auth-button:hover {
+                transform: none;
+            }
+
+            /* Better focus states for accessibility */
+            .search-input:focus, .token-input:focus, .price-input:focus {
+                transform: none;
+                border-width: 3px;
+            }
+
+            /* Improve table interaction on touch */
+            .table-container {
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+            }
+
+            .table-container::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            .table-container::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 4px;
+            }
+
+            .table-container::-webkit-scrollbar-thumb {
+                background: var(--matas-blue);
+                border-radius: 4px;
+            }
+
+            .table-container::-webkit-scrollbar-thumb:hover {
+                background: var(--matas-navy);
+            }
+        }
+
+        /* Landscape orientation optimizations for mobile */
+        @media screen and (max-width: 768px) and (orientation: landscape) {
+            .header {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+                margin-bottom: 5px;
+            }
+
+            .header p {
+                font-size: 0.9rem;
+            }
+
+            .controls {
+                padding: 12px;
+                margin-bottom: 12px;
+            }
+
+            .auth-card {
+                padding: 20px 15px;
+            }
+
+            .auth-card h1 {
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+
+            .modal-content {
+                margin: 5px;
+                padding: 10px;
+            }
+
+            .modal-image {
+                max-height: 80vh;
+            }
+        }
+
+        /* Extra small screens (smaller phones) */
+        @media screen and (max-width: 375px) {
+            body {
+                padding: 8px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .controls {
+                padding: 12px;
+            }
+
+            .search-input {
+                padding: 12px 14px;
+            }
+
+            .load-button, .sync-button {
+                padding: 12px 16px;
+                font-size: 15px;
+            }
+
+            .auth-card {
+                padding: 25px 15px;
+            }
+
+            .price-input {
+                width: 70px;
+                padding: 6px 4px;
+                font-size: 13px;
+            }
+
+            th, td {
+                padding: 10px 6px;
+                font-size: 13px;
+            }
+
+            .pagination {
+                padding: 12px;
+            }
+
+            .pagination button {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+        }
+
+        /* Mobile-specific CSS classes for JavaScript */
+        .mobile-device .table-container.scrolling {
+            border: 2px solid var(--matas-blue);
+            transition: border-color 0.2s ease;
+        }
+
+        .virtual-keyboard-open {
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .virtual-keyboard-open .modal-content {
+            position: fixed !important;
+            top: 20px !important;
+            transform: translateX(-50%) !important;
+        }
+
+            /* iOS Safari specific fixes */
+            @supports (-webkit-touch-callout: none) {
+                .search-input, .token-input, .price-input {
+                    font-size: 16px !important; /* Prevent zoom on iOS */
+                    transform: translateZ(0); /* Force hardware acceleration */
+                    -webkit-user-select: text;
+                    user-select: text;
+                }
+
+            .table-container {
+                -webkit-overflow-scrolling: touch;
+                transform: translateZ(0);
+            }
+
+            /* Fix for iOS Safari bottom safe area */
+            @media screen and (max-width: 768px) {
+                body {
+                    padding-bottom: env(safe-area-inset-bottom, 10px);
+                }
+
+                .pagination {
+                    padding-bottom: calc(15px + env(safe-area-inset-bottom, 0px));
+                }
+            }
+        }
+
+        /* Android Chrome specific fixes */
+        @media screen and (max-width: 768px) {
+            /* Fix for Android Chrome address bar */
+            .auth-container, body {
+                min-height: 100vh;
+                min-height: -webkit-fill-available;
+            }
+
+            .modal {
+                height: 100vh;
+                height: -webkit-fill-available;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <!-- Authentication Screen -->
+    <div id="authContainer" class="auth-container">
+        <div class="auth-card">
+            <h1>Authentication Required</h1>
+            <p>Please enter the access token provided by your contact person.</p>
+            
+            <form id="authForm" class="auth-form">
+                <input 
+                    type="password" 
+                    id="tokenInput" 
+                    class="token-input" 
+                    placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" 
+                    autocomplete="current-password"
+                    inputmode="text"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                    required
+                />
+                <button type="submit" id="authButton" class="auth-button">
+                    Authenticate
+                </button>
+            </form>
+            
+            <div id="authError" class="auth-error" style="display: none;"></div>
+            <div id="authLoading" class="auth-loading" style="display: none;">Validating token...</div>
+        </div>
+    </div>
+
+    <!-- Main Application (hidden until authenticated) -->
+    <div id="mainApp" class="main-app">
+        <div class="header">
+            <h1>Product Prices in Normal</h1>
+            <p>Find and register product prices in Normal.
+                <button id="logoutButton" class="logout-button">Logout</button>
+            </p>
+        </div>
+    
+    <div class="controls">
+            <div class="controls-row">
+                <div class="search-wrapper">
+                    <label class="search-label" for="searchInput">Search by Product or Varenummer</label>
+                    <input id="searchInput" class="search-input" type="search" placeholder="Product name or ID…" inputmode="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+                </div>
+                <select id="brandFilter" class="filter-select">
+                    <option value="">All Brands</option>
+				</select>
+				<select id="categoryFilter" class="filter-select">
+					<option value="">All Categories</option>
+				</select>
+				<select id="pricingRoleFilter" class="filter-select">
+					<option value="">All Pricing Roles</option>
+				</select>
+				<select id="priceStatusFilter" class="filter-select">
+					<option value="">All Price Statuses</option>
+					<option value="has_price">Has Price</option>
+					<option value="no_price">No Price</option>
+				</select>
+				<button id="loadButton" class="load-button">Load Data</button>
+                <button id="syncButton" class="sync-button" disabled>Sync</button>
+            </div>
+        <div class="status-bar">
+            <span id="statusText">No data loaded.</span>
+            <span id="dirtyText"></span>
+            <span id="keyboardHints" style="font-size: 11px; color: #7f8c8d; margin-left: 15px;">💡 Ctrl+S to sync • Ctrl+L to search</span>
+        </div>
+        <div id="debugInfo" class="debug-info" style="display: none;"></div>
+    </div>
+    
+    <div id="errorMessage"></div>
+    <div id="dataContainer">
+        <div class="empty-state">
+            Click "Load Data" to display the contents.
+        </div>
+    </div>
+
+    <!-- Image Preview Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <button id="modalCloseButton" class="modal-close">&times;</button>
+            <img id="modalImage" class="modal-image" src="" alt="Preview">
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const DEFAULT_FILE = 'data/products.csv';
+        const GITHUB_OWNER = 'comexmatas';
+        const GITHUB_REPO = 'comexmatas-se.github.io';
+        const SESSION_KEY = 'github_token';
+        const DEBUG = false; // Set to true for debugging
+        
+        // UI elements
+        const loadButton = document.getElementById('loadButton');
+        const syncButton = document.getElementById('syncButton');
+        const searchInput = document.getElementById('searchInput');
+        const errorMessage = document.getElementById('errorMessage');
+        const dataContainer = document.getElementById('dataContainer');
+        const statusText = document.getElementById('statusText');
+        const dirtyText = document.getElementById('dirtyText');
+        const debugInfo = document.getElementById('debugInfo');
+
+        // App state
+        const pageSize = 100;
+        let headersRef = [];
+        let allRows = [];
+        let filteredRows = [];
+        let currentPage = 1;
+        let dirtyById = new Map();
+        let errorById = new Set();
+        let localChanges = new Set(); // Track which items have local changes
+        let lastCommitSha = null;
+        let lastSyncTime = null;
+
+        // Authentication state
+        let isAuthenticated = false;
+        let authToken = null;
+
+        function debugLog(message, data = null) {
+            if (DEBUG) {
+                console.log(message, data);
+                const debugDiv = document.getElementById('debugInfo');
+                debugDiv.style.display = 'block';
+                const timestamp = new Date().toLocaleTimeString();
+                debugDiv.innerHTML += `<div>${timestamp}: ${message}${data ? ' ' + JSON.stringify(data, null, 2) : ''}</div>`;
+                debugDiv.scrollTop = debugDiv.scrollHeight;
+            }
+        }
+
+        // Initialize authentication on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkExistingSession();
+            setupAuthHandlers();
+            setupAppHandlers();
+            
+            // Setup modal close button with mobile optimization
+            const modalCloseButton = document.getElementById('modalCloseButton');
+            if (modalCloseButton) {
+                addMobileButtonHandler(modalCloseButton, closeModal);
+            }
+            
+            // Load last sync time
+            const savedSyncTime = localStorage.getItem('lastSyncTime');
+            if (savedSyncTime) {
+                lastSyncTime = savedSyncTime;
+            }
+        });
+
+        function checkExistingSession() {
+            const savedToken = sessionStorage.getItem(SESSION_KEY);
+            if (savedToken) {
+                validateToken(savedToken, true, true);
+            }
+        }
+
+        function handleTokenExpired() {
+            isAuthenticated = false;
+            authToken = null;
+            sessionStorage.removeItem(SESSION_KEY);
+
+            document.getElementById('tokenInput').value = '';
+            document.getElementById('tokenInput').classList.remove('error');
+            document.getElementById('mainApp').classList.remove('authenticated');
+            document.getElementById('authContainer').style.display = 'flex';
+
+            const authError = document.getElementById('authError');
+            authError.textContent = 'Your access token has expired. Please contact your administrator to receive a new token.';
+            authError.style.display = 'block';
+
+            setTimeout(() => {
+                document.getElementById('tokenInput').focus();
+            }, 100);
+        }
+
+        function setupAuthHandlers() {
+            const authForm = document.getElementById('authForm');
+            const logoutButton = document.getElementById('logoutButton');
+            const authButton = document.getElementById('authButton');
+
+            authForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const token = document.getElementById('tokenInput').value.trim();
+                if (token) {
+                    await validateToken(token, false);
+                }
+            });
+
+            // Use mobile-optimized handler for auth button
+            addMobileButtonHandler(authButton, async function(e) {
+                e.preventDefault();
+                const token = document.getElementById('tokenInput').value.trim();
+                if (token) {
+                    await validateToken(token, false);
+                }
+            });
+
+            addMobileButtonHandler(logoutButton, function() {
+                logout();
+            });
+        }
+
+        function setupAppHandlers() {
+            // Debounced search
+            let searchTimer = null;
+            searchInput.addEventListener('input', () => {
+                if (!allRows.length) return;
+                clearTimeout(searchTimer);
+                searchTimer = setTimeout(() => {
+                    applySearch(searchInput.value.trim());
+                    currentPage = 1;
+                    render();
+                }, 200);
+            });
+            
+            // Filter handlers
+            const brandFilter = document.getElementById('brandFilter');
+            const categoryFilter = document.getElementById('categoryFilter');
+            
+            brandFilter.addEventListener('change', () => {
+                if (!allRows.length) return;
+                applySearch(searchInput.value.trim());
+                currentPage = 1;
+                render();
+            });
+            
+            categoryFilter.addEventListener('change', () => {
+                if (!allRows.length) return;
+                applySearch(searchInput.value.trim());
+                currentPage = 1;
+                render();
+            });
+			
+			const pricingRoleFilter = document.getElementById('pricingRoleFilter');
+
+			pricingRoleFilter.addEventListener('change', () => {
+				if (!allRows.length) return;
+				applySearch(searchInput.value.trim());
+				currentPage = 1;
+				render();
+			});
+
+			const priceStatusFilter = document.getElementById('priceStatusFilter');
+
+			priceStatusFilter.addEventListener('change', () => {
+				if (!allRows.length) return;
+				applySearch(searchInput.value.trim());
+				currentPage = 1;
+				render();
+			});
+            
+            // Enhanced button event handling for mobile
+            addMobileButtonHandler(loadButton, function() {
+                loadData(DEFAULT_FILE);
+            });
+
+            addMobileButtonHandler(syncButton, async () => {
+                if (allRows.length === 0) {
+                    alert('No data loaded. Please "Load Data" first before syncing.');
+                    return;
+                }
+                if (errorById.size > 0) {
+                    alert('Please fix validation errors before syncing.');
+                    return;
+                }
+                if (localChanges.size === 0) {
+                    alert('No changes to sync. Make some price edits first.');
+                    return;
+                }
+                
+                // Proceed directly with sync (no confirmation dialog)
+                
+                try {
+                    await attemptSync();
+                } catch (e) {
+                    console.error('Sync failed:', e);
+                    alert(`Sync failed: ${e.message}`);
+                }
+            });
+        }
+
+        // Enhanced button handler that works better on mobile devices
+        function addMobileButtonHandler(button, handler) {
+            if (!button) return;
+            
+            // Mark button as having mobile handler
+            button.setAttribute('data-mobile-handler', 'true');
+            
+            let touchStartTime = 0;
+            let touchHandled = false;
+            let lastExecuteTime = 0;
+            
+            // Touch events for mobile (faster response)
+            button.addEventListener('touchstart', function(e) {
+                touchStartTime = Date.now();
+                touchHandled = false;
+                
+                // Prevent default to avoid ghost clicks
+                e.preventDefault();
+                
+                // Add visual feedback
+                button.style.transform = 'scale(0.98)';
+                button.style.transition = 'transform 0.1s ease';
+            });
+            
+            button.addEventListener('touchend', function(e) {
+                const touchDuration = Date.now() - touchStartTime;
+                const timeSinceLastExecute = Date.now() - lastExecuteTime;
+                
+                // Reset visual feedback
+                setTimeout(() => {
+                    button.style.transform = '';
+                    button.style.transition = '';
+                }, 100);
+                
+                // Only trigger if it was a quick tap (not a long press or scroll) and not too soon after last execution
+                if (touchDuration < 500 && !touchHandled && !button.disabled && timeSinceLastExecute > 200) {
+                    touchHandled = true;
+                    lastExecuteTime = Date.now();
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Small delay to ensure visual feedback is seen
+                    setTimeout(() => {
+                        handler.call(button, e);
+                    }, 50);
+                }
+            });
+            
+            button.addEventListener('touchcancel', function() {
+                // Reset visual feedback on cancel
+                button.style.transform = '';
+                button.style.transition = '';
+                touchHandled = true;
+            });
+            
+            // Mouse events for desktop (with duplicate prevention)
+            button.addEventListener('click', function(e) {
+                // Prevent double execution if touch event already handled this
+                if (touchHandled) {
+                    touchHandled = false;
+                    return;
+                }
+                
+                const timeSinceLastExecute = Date.now() - lastExecuteTime;
+                
+                // Small delay to allow touch events to handle first
+                setTimeout(() => {
+                    if (!touchHandled && !button.disabled && timeSinceLastExecute > 200) {
+                        lastExecuteTime = Date.now();
+                        handler.call(button, e);
+                    }
+                }, 10);
+            });
+        }
+
+        async function validateToken(token, silent = false, isSessionRestore = false) {
+            const authButton = document.getElementById('authButton');
+            const authError = document.getElementById('authError');
+            const authLoading = document.getElementById('authLoading');
+            const tokenInput = document.getElementById('tokenInput');
+
+            if (!silent) {
+                authButton.disabled = true;
+                authError.style.display = 'none';
+                authLoading.style.display = 'block';
+                tokenInput.classList.remove('error');
+            }
+
+            try {
+                const response = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}`, {
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (response.ok) {
+                    authToken = token;
+                    isAuthenticated = true;
+                    sessionStorage.setItem(SESSION_KEY, token);
+                    showMainApp();
+                } else if (response.status === 401) {
+                    if (isSessionRestore) {
+                        throw new Error('Your access token has expired. Please contact your administrator to receive a new token.');
+                    }
+                    throw new Error('Invalid or expired token. Please check your token and try again.');
+                } else if (response.status === 404) {
+                    throw new Error('Access denied. Your token does not have permission to access this repository.');
+                } else {
+                    throw new Error(`Authentication failed: ${response.status} ${response.statusText}`);
+                }
+            } catch (error) {
+                console.error('Authentication error:', error);
+                isAuthenticated = false;
+                authToken = null;
+                sessionStorage.removeItem(SESSION_KEY);
+                if (!silent) {
+                    authError.textContent = error.message;
+                    authError.style.display = 'block';
+                    tokenInput.classList.add('error');
+                    tokenInput.focus();
+                } else if (isSessionRestore) {
+                    // Show the expiry message even though we suppressed the loading UI
+                    authError.textContent = error.message;
+                    authError.style.display = 'block';
+                }
+            } finally {
+                if (!silent) {
+                    authButton.disabled = false;
+                    authLoading.style.display = 'none';
+                }
+            }
+        }
+
+        function showMainApp() {
+            document.getElementById('authContainer').style.display = 'none';
+            document.getElementById('mainApp').classList.add('authenticated');
+        }
+
+        function logout() {
+            isAuthenticated = false;
+            authToken = null;
+            sessionStorage.removeItem(SESSION_KEY);
+            
+            document.getElementById('tokenInput').value = '';
+            document.getElementById('authError').style.display = 'none';
+            document.getElementById('tokenInput').classList.remove('error');
+            
+            document.getElementById('mainApp').classList.remove('authenticated');
+            document.getElementById('authContainer').style.display = 'flex';
+            
+            setTimeout(() => {
+                document.getElementById('tokenInput').focus();
+            }, 100);
+        }
+
+        function loadData(filePath) {
+            if (filePath.toLowerCase().endsWith('.csv')) {
+                loadCSVFromGitHub(filePath);
+            } else {
+                errorMessage.innerHTML = `<div class="error">Unsupported file type. Please select a .csv file.</div>`;
+            }
+        }
+
+        async function loadCSVFromGitHub(filePath) {
+            try {
+                dataContainer.innerHTML = '<div class="loading">Loading data...</div>';
+                errorMessage.innerHTML = '';
+                debugLog('Starting to load CSV file from GitHub', filePath);
+
+                if (!authToken) {
+                    throw new Error('Authentication required. Please login first.');
+                }
+
+                let parsed = null;
+
+                // Load data from API
+                const response = await fetch(
+                    `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${filePath}`,
+                    {
+                        headers: {
+                            'Authorization': `token ${authToken}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    }
+                );
+
+                if (response.status === 401) {
+                    handleTokenExpired();
+                    return;
+                }
+
+                if (response.ok) {
+                    const data = await response.json();
+                    lastCommitSha = data.sha;
+
+                    debugLog('GitHub response data:', {
+                        size: data.size,
+                        encoding: data.encoding,
+                        hasContent: !!data.content,
+                        downloadUrl: data.download_url
+                    });
+                    
+                    let content;
+                    
+                    // Check if file is too large for direct content API (>1MB)
+                    if (data.size > 1000000 || !data.content) {
+                        debugLog('File too large for content API, using Git Data API');
+                        
+                        // For large files, we need to use the Git Data API to get the blob
+                        // First, get the Git tree to find the file's SHA
+                        const treeResponse = await fetch(
+                            `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/trees/main?recursive=1`,
+                            {
+                                headers: {
+                                    'Authorization': `token ${authToken}`,
+                                    'Accept': 'application/vnd.github.v3+json'
+                                }
+                            }
+                        );
+                        
+                        if (!treeResponse.ok) {
+                            throw new Error(`Failed to get repository tree: ${treeResponse.status}`);
+                        }
+                        
+                        const treeData = await treeResponse.json();
+                        const fileEntry = treeData.tree.find(entry => entry.path === filePath);
+                        
+                        if (!fileEntry) {
+                            throw new Error(`File ${filePath} not found in repository`);
+                        }
+                        
+                        debugLog('Found file in tree, SHA:', fileEntry.sha);
+                        
+                        // Now get the blob content
+                        const blobResponse = await fetch(
+                            `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/blobs/${fileEntry.sha}`,
+                            {
+                                headers: {
+                                    'Authorization': `token ${authToken}`,
+                                    'Accept': 'application/vnd.github.v3+json'
+                                }
+                            }
+                        );
+                        
+                        if (!blobResponse.ok) {
+                            throw new Error(`Failed to get blob content: ${blobResponse.status}`);
+                        }
+                        
+                        const blobData = await blobResponse.json();
+                        debugLog('Got blob data, size:', blobData.size, 'encoding:', blobData.encoding);
+                        
+                        // Decode the base64 content
+                        const cleanContent = blobData.content.replace(/\s/g, '');
+                        try {
+                            const binaryString = atob(cleanContent);
+                            const bytes = new Uint8Array(binaryString.length);
+                            for (let i = 0; i < binaryString.length; i++) {
+                                bytes[i] = binaryString.charCodeAt(i);
+                            }
+                            content = new TextDecoder('utf-8').decode(bytes);
+                            debugLog('Successfully decoded large file, content length:', content.length);
+                        } catch (e) {
+                            debugLog('UTF-8 decoding failed for large file, falling back to simple atob:', e);
+                            content = atob(cleanContent);
+                        }
+                    } else {
+                        // Small file, use base64 content
+                        debugLog('Using base64 content for small file');
+                        const cleanContent = data.content.replace(/\s/g, '');
+                        
+                        try {
+                            const binaryString = atob(cleanContent);
+                            const bytes = new Uint8Array(binaryString.length);
+                            for (let i = 0; i < binaryString.length; i++) {
+                                bytes[i] = binaryString.charCodeAt(i);
+                            }
+                            content = new TextDecoder('utf-8').decode(bytes);
+                        } catch (e) {
+                            debugLog('UTF-8 decoding failed, falling back to simple atob:', e);
+                            content = atob(cleanContent);
+                        }
+                    }
+                    
+                    debugLog('Final content sample (first 200 chars):', content.substring(0, 200));
+                    debugLog('Final content length:', content.length);
+                    
+                    // Parse CSV with explicit delimiter
+                    parsed = Papa.parse(content, {
+                        header: true,
+                        delimiter: ';',
+                        dynamicTyping: false,
+                        skipEmptyLines: true,
+                        encoding: 'UTF-8'
+                    });
+                
+                    debugLog('CSV parsed successfully', {
+                        rows: parsed.data ? parsed.data.length : 0,
+                        errors: parsed.errors ? parsed.errors.length : 0,
+                        meta: parsed.meta
+                    });
+                    
+                    if (parsed.errors && parsed.errors.length > 0) {
+                        debugLog('CSV parsing errors:', parsed.errors);
+                    }
+                } else if (response.status === 404) {
+                    // File doesn't exist yet
+                    hasRemoteData = false;
+                    debugLog('File not found, creating empty dataset');
+                    parsed = { data: [] };
+                } else {
+                    throw new Error('Failed to load data');
+                }
+
+                if (!parsed || !parsed.data || parsed.data.length === 0) {
+                    headersRef = [];
+                    allRows = [];
+                    filteredRows = [];
+                    displayEmpty();
+                    return;
+                }
+
+                // Get headers from Papa Parse
+                const headers = Object.keys(parsed.data[0]);
+                debugLog('Headers:', headers);
+
+                // Convert parsed data to our format
+                allRows = parsed.data.map((row, idx) => {
+                    const obj = {};
+                    Object.keys(row).forEach(key => {
+                        obj[key] = String(row[key] || '');
+                    });
+                    obj.__rowIndex = idx;
+                    
+                    // Use Product ID column for unique identifier
+                    const productId = String(obj['Product ID'] || '').trim();
+                    
+                    obj.__id = productId || `row_${idx}`;
+                    return obj;
+                }).filter(item => item.__id);
+
+                debugLog('Data rows count:', allRows.length);
+
+                headersRef = headers;
+                filteredRows = allRows;
+                dirtyById.clear();
+                errorById.clear();
+                localChanges.clear();
+                
+                debugLog('After CSV load - before draft restore', {
+                    dirtyByIdSize: dirtyById.size,
+                    localChangesSize: localChanges.size
+                });
+                
+                currentPage = 1;
+                syncButton.disabled = false;
+                statusText.textContent = `Loaded ${allRows.length} rows`;
+                
+                // Populate filters
+                populateFilters();
+                
+                // Try to restore any saved drafts
+                loadDraft();
+                
+                render();
+            } catch (error) {
+                console.error('Error loading CSV:', error);
+                debugLog('Error loading CSV:', error.message);
+                errorMessage.innerHTML = `<div class="error">Error loading file: ${error.message}</div>`;
+                dataContainer.innerHTML = '<div class="empty-state">Failed to load data.</div>';
+            }
+        }
+
+        function rowToObject(headers, row, idx) {
+            const obj = {};
+            headers.forEach((h, i) => { obj[h] = row[i] ?? ''; });
+            obj.__rowIndex = idx;
+            
+            // Use Product ID column for unique identifier
+            const productId = String(obj['Product ID'] || '').trim();
+            
+            obj.__id = productId || `row_${idx}`;
+            return obj;
+        }
+
+		function populateFilters() {
+			if (!allRows.length) return;
+			
+			const brandFilter = document.getElementById('brandFilter');
+			const categoryFilter = document.getElementById('categoryFilter');
+			const pricingRoleFilter = document.getElementById('pricingRoleFilter');
+			
+			// Get unique values
+			const brands = new Set(allRows.map(r => r['Brand']).filter(Boolean));
+			const categories = new Set(allRows.map(r => r['Category']).filter(Boolean));
+			const pricingRoles = new Set(allRows.map(r => r['pricing_role_category']).filter(Boolean));
+			
+			// Sort values alphabetically
+			const sortedBrands = Array.from(brands).sort();
+			const sortedCategories = Array.from(categories).sort();
+			const sortedPricingRoles = Array.from(pricingRoles).sort();
+			
+			// Populate brand filter
+			brandFilter.innerHTML = '<option value="">All Brands</option>' +
+				sortedBrands.map(brand => `<option value="${escapeAttr(brand)}">${escapeHtml(brand)}</option>`).join('');
+			
+			// Populate category filter
+			categoryFilter.innerHTML = '<option value="">All Categories</option>' +
+				sortedCategories.map(category => `<option value="${escapeAttr(category)}">${escapeHtml(category)}</option>`).join('');
+			
+			// Populate pricing role filter
+			pricingRoleFilter.innerHTML = '<option value="">All Pricing Roles</option>' +
+				sortedPricingRoles.map(role => `<option value="${escapeAttr(role)}">${escapeHtml(role)}</option>`).join('');
+		}
+
+		function applySearch(query) {
+			const searchQuery = query ? query.toLowerCase() : '';
+			const brandFilter = document.getElementById('brandFilter').value;
+			const categoryFilter = document.getElementById('categoryFilter').value;
+			const pricingRoleFilter = document.getElementById('pricingRoleFilter').value;
+			const priceStatusFilter = document.getElementById('priceStatusFilter').value;
+
+			filteredRows = allRows.filter(row => {
+				// Apply text search
+				const matchesSearch = !searchQuery || ['Product', 'Product ID'].some(
+					field => String(row[field] || '').toLowerCase().includes(searchQuery)
+				);
+
+				// Apply brand filter
+				const matchesBrand = !brandFilter || row['Brand'] === brandFilter;
+
+				// Apply category filter
+				const matchesCategory = !categoryFilter || row['Category'] === categoryFilter;
+
+				// Apply pricing role filter
+				const matchesPricingRole = !pricingRoleFilter || row['pricing_role_category'] === pricingRoleFilter;
+
+				// Apply price status filter (respect locally edited values)
+				let matchesPriceStatus = true;
+				if (priceStatusFilter) {
+					const effectivePrice = localChanges.has(row.__id)
+						? (dirtyById.get(row.__id) || '')
+						: (row['Price'] || '');
+					const hasPrice = effectivePrice.trim() !== '';
+					matchesPriceStatus = priceStatusFilter === 'has_price' ? hasPrice : !hasPrice;
+				}
+
+				return matchesSearch && matchesBrand && matchesCategory && matchesPricingRole && matchesPriceStatus;
+			});
+		}
+
+        function render() {
+            if (!filteredRows.length) {
+                displayEmpty();
+                return;
+            }
+            const total = filteredRows.length;
+            const totalPages = Math.max(1, Math.ceil(total / pageSize));
+            if (currentPage > totalPages) currentPage = totalPages;
+            const start = (currentPage - 1) * pageSize;
+            const pageRows = filteredRows.slice(start, start + pageSize);
+
+            dataContainer.innerHTML = buildTable(headersRef, pageRows) + buildPagination(total, currentPage, totalPages);
+            updateDirtyStatus();
+        }
+
+        function buildTable(headers, rows) {
+            // Use exact CSV column structure - display columns in optimal mobile order
+            const displayColumns = ['Image URL', 'Product', 'Price', 'Brand', 'Category'];
+            
+            // Filter to only show the columns we want (hide Product ID and URL)
+            const finalHeaders = displayColumns.filter(col => headers.includes(col));
+            
+            const thead = `
+                <thead>
+                    <tr>
+                        ${finalHeaders.map(h => `<th>${escapeHtml(h)}</th>`).join('')}
+                    </tr>
+                </thead>`;
+            const tbodyRows = rows.map(r => {
+                const rowId = r.__id;
+                // Only mark as dirty if it's a user session change
+                const isDirty = localChanges.has(rowId);
+                // Use user changed value if exists, otherwise use original CSV Price column
+                const priceVal = localChanges.has(rowId) ? dirtyById.get(rowId) : (r['Price'] || '');
+                const rowClass = isDirty ? ' class="row-dirty"' : '';
+                
+                const cells = finalHeaders.map(h => {
+                    const headerLc = String(h || '').toLowerCase();
+                    // Check if this is the Price column (editable)
+                    const isPriceColumn = h === 'Price';
+                    
+                    if (isPriceColumn) {
+                        // Render price as editable input
+                        const priceInputClass = errorById.has(rowId) ? 'price-input cell-error' : 'price-input';
+                        return `<td><input type="text" inputmode="decimal" pattern="[0-9]*" class="${priceInputClass}" data-rowid="${escapeAttr(rowId)}" value="${escapeAttr(priceVal)}" placeholder="0.00" /></td>`;
+                    } else {
+                        // Render other cells normally
+                        return `<td>${renderCell(h, r[h], r)}</td>`;
+                    }
+                }).join('');
+                
+                return `<tr${rowClass}>${cells}</tr>`;
+            }).join('');
+            return `
+                <div class="table-container">
+                    <table>
+                        ${thead}
+                        <tbody>
+                            ${tbodyRows}
+                        </tbody>
+                    </table>
+                </div>`;
+        }
+
+        function renderCell(header, value, rowData = null) {
+            const text = String(value ?? '');
+            
+            // Handle Product column as clickable links using URL column
+            if (header === 'Product' && rowData) {
+                const productUrl = rowData['URL'];
+                
+                if (productUrl && isValidUrl(productUrl)) {
+                    const safeUrl = escapeAttr(productUrl);
+                    const safeText = escapeHtml(text);
+                    return `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeText}</a>`;
+                }
+            }
+            
+            // Handle Image URL column
+            if (header === 'Image URL' && text && isValidUrl(text)) {
+                const safeUrl = escapeAttr(text);
+                return `<img src="${safeUrl}" class="thumb" onclick="openModal('${safeUrl}')" onerror="this.style.display='none'; this.onerror=null;" />`;
+            }
+            
+            return escapeHtml(text);
+        }
+
+        function isValidUrl(string) {
+            try {
+                new URL(string);
+                return true;
+            } catch (_) {
+                return false;
+            }
+        }
+
+        function buildPagination(total, page, totalPages) {
+            return `
+                <div class="pagination">
+                    <span>${total} rows • Page ${page} of ${totalPages}</span>
+                    <button ${page <= 1 ? 'disabled' : ''} id="prevPage">Prev</button>
+                    <button ${page >= totalPages ? 'disabled' : ''} id="nextPage">Next</button>
+                </div>`;
+        }
+
+        function updateDirtyStatus() {
+            const dirtyCount = dirtyById.size;
+            dirtyText.textContent = dirtyCount ? ` • ${dirtyCount} edited` : '';
+            
+            // Attach event listeners only to new inputs (those without listeners)
+            document.querySelectorAll('input.price-input:not([data-listeners-attached])').forEach(input => {
+                input.addEventListener('input', onPriceInputChange);
+                input.addEventListener('blur', onPriceInputBlur);
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') { e.currentTarget.blur(); }
+                });
+                input.setAttribute('data-listeners-attached', 'true');
+            });
+            
+            // Attach pagination event listeners only once with mobile optimization
+            const prevBtn = document.getElementById('prevPage');
+            const nextBtn = document.getElementById('nextPage');
+            if (prevBtn && !prevBtn.hasAttribute('data-listener-attached')) {
+                addMobileButtonHandler(prevBtn, () => { 
+                    currentPage = Math.max(1, currentPage - 1); 
+                    render(); 
+                });
+                prevBtn.setAttribute('data-listener-attached', 'true');
+            }
+            if (nextBtn && !nextBtn.hasAttribute('data-listener-attached')) {
+                addMobileButtonHandler(nextBtn, () => { 
+                    currentPage += 1; 
+                    render(); 
+                });
+                nextBtn.setAttribute('data-listener-attached', 'true');
+            }
+        }
+
+        function onPriceInputChange(e) {
+            const input = e.currentTarget;
+            const rowId = input.getAttribute('data-rowid');
+            let val = input.value.replace(/,/g, '.');
+            
+            if (!/^\d*(?:\.\d{0,2})?$/.test(val)) {
+                errorById.add(rowId);
+                input.classList.add('cell-error');
+            } else {
+                input.classList.remove('cell-error');
+                errorById.delete(rowId);
+                if (val === '') {
+                    dirtyById.delete(rowId);
+                    localChanges.delete(rowId);
+                } else {
+                    dirtyById.set(rowId, val);
+                    localChanges.add(rowId); // Track this as a local change
+                }
+            }
+            
+            const tr = input.closest('tr');
+            if (tr) {
+                // Only mark row as dirty if it's a user session change
+                if (localChanges.has(rowId)) tr.classList.add('row-dirty'); 
+                else tr.classList.remove('row-dirty');
+            }
+            // Show count of user session edits only
+            dirtyText.textContent = localChanges.size ? ` • ${localChanges.size} edited` : '';
+            syncButton.disabled = errorById.size > 0 || localChanges.size === 0;
+        }
+
+        function onPriceInputBlur(e) {
+            const input = e.currentTarget;
+            const rowId = input.getAttribute('data-rowid');
+            let val = input.value.replace(/,/g, '.');
+            if (val && /^\d+(?:\.\d+)?$/.test(val)) {
+                const num = Number(val);
+                input.value = Number.isFinite(num) ? num.toFixed(2) : val;
+                dirtyById.set(rowId, input.value);
+            }
+        }
+        
+        async function attemptSync() {
+            if (!authToken) {
+                throw new Error('Authentication required. Please login again.');
+            }
+
+            try {
+                statusText.textContent = 'Syncing with GitHub...';
+                syncButton.disabled = true;
+                syncButton.textContent = 'Syncing...';
+
+                // Step 1: Load data
+                const response = await fetch(
+                    `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${DEFAULT_FILE}`,
+                    {
+                        headers: {
+                            'Authorization': `token ${authToken}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    }
+                );
+
+                let remoteDatabase = [];
+                let hasRemoteData = false;
+
+                if (response.status === 401) {
+                    handleTokenExpired();
+                    throw new Error('Your access token has expired. Please log in again with a new token.');
+                }
+
+                if (response.ok) {
+                    const data = await response.json();
+                    lastCommitSha = data.sha;
+
+                    let content;
+
+                    // Check if file is too large for direct content API (>1MB)
+                    if (data.size > 1000000 || !data.content) {
+                        // For large files, use the Git Data API to get the blob
+                        const treeResponse = await fetch(
+                            `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/trees/main?recursive=1`,
+                            {
+                                headers: {
+                                    'Authorization': `token ${authToken}`,
+                                    'Accept': 'application/vnd.github.v3+json'
+                                }
+                            }
+                        );
+                        
+                        if (!treeResponse.ok) {
+                            throw new Error(`Failed to get repository tree: ${treeResponse.status}`);
+                        }
+                        
+                        const treeData = await treeResponse.json();
+                        const fileEntry = treeData.tree.find(entry => entry.path === DEFAULT_FILE);
+                        
+                        if (!fileEntry) {
+                            throw new Error(`File ${DEFAULT_FILE} not found in repository`);
+                        }
+                        
+                        // Get the blob content
+                        const blobResponse = await fetch(
+                            `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/blobs/${fileEntry.sha}`,
+                            {
+                                headers: {
+                                    'Authorization': `token ${authToken}`,
+                                    'Accept': 'application/vnd.github.v3+json'
+                                }
+                            }
+                        );
+                        
+                        if (!blobResponse.ok) {
+                            throw new Error(`Failed to get blob content: ${blobResponse.status}`);
+                        }
+                        
+                        const blobData = await blobResponse.json();
+                        
+                        // Decode the base64 content
+                        const cleanContent = blobData.content.replace(/\s/g, '');
+                        try {
+                            const binaryString = atob(cleanContent);
+                            const bytes = new Uint8Array(binaryString.length);
+                            for (let i = 0; i < binaryString.length; i++) {
+                                bytes[i] = binaryString.charCodeAt(i);
+                            }
+                            content = new TextDecoder('utf-8').decode(bytes);
+                        } catch (e) {
+                            content = atob(cleanContent);
+                        }
+                    } else {
+                        // Small file, use base64 content
+                        const cleanContent = data.content.replace(/\s/g, '');
+                        try {
+                            const binaryString = atob(cleanContent);
+                            const bytes = new Uint8Array(binaryString.length);
+                            for (let i = 0; i < binaryString.length; i++) {
+                                bytes[i] = binaryString.charCodeAt(i);
+                            }
+                            content = new TextDecoder('utf-8').decode(bytes);
+                        } catch (e) {
+                            debugLog('UTF-8 decoding failed, falling back to simple atob:', e);
+                            content = atob(cleanContent);
+                        }
+                    }
+                    
+                    // Parse CSV with explicit delimiter
+                    const parsed = Papa.parse(content, {
+                        header: true,
+                        delimiter: ';',
+                        dynamicTyping: false,
+                        skipEmptyLines: true,
+                        encoding: 'UTF-8'
+                    });
+                    
+                    remoteDatabase = parsed.data.map((row, idx) => {
+                        const obj = {};
+                        Object.keys(row).forEach(key => {
+                            obj[key] = String(row[key] || '');
+                        });
+                        obj.__rowIndex = idx;
+                        
+                        // Use Product ID column for unique identifier
+                        const productId = String(obj['Product ID'] || '').trim();
+                        
+                        obj.__id = productId || `row_${idx}`;
+                        return obj;
+                    }).filter(item => item.__id);
+                    
+                    hasRemoteData = true;
+                } else if (response.status === 404) {
+                    // File doesn't exist yet
+                    hasRemoteData = false;
+                } else {
+                    throw new Error('Failed to load data');
+                }
+
+                // Step 2: Merge databases
+                const mergedDatabase = mergeDatabase(allRows, remoteDatabase);
+                
+                // Step 3: Check for overwrites and warn
+                const overwrites = detectOverwrites(allRows, remoteDatabase);
+                
+                if (overwrites.length > 0 && localChanges.size > 0) {
+                    const message = `This sync will overwrite ${overwrites.length} remote record(s) with your local changes:\n\n` +
+                                  overwrites.slice(0, 5).map(id => `• ${id}`).join('\n') +
+                                  (overwrites.length > 5 ? `\n... and ${overwrites.length - 5} more` : '') +
+                                  '\n\nContinue?';
+                    
+                    if (!confirm(message)) {
+                        statusText.textContent = 'Sync cancelled';
+                        return;
+                    }
+                }
+
+                // Step 4: Update local database
+                allRows = mergedDatabase;
+                filteredRows = allRows;
+                
+                // Step 5: Push to GitHub
+                await pushToGitHub();
+                
+                // Step 6: Clear local changes tracking
+                const changeCount = localChanges.size;
+                localChanges.clear();
+                dirtyById.clear();
+                localStorage.removeItem('priceDraft');
+                
+                // Step 7: Update UI
+                currentPage = 1;
+                render();
+                
+                const newRecords = mergedDatabase.length - (hasRemoteData ? remoteDatabase.length : 0);
+                statusText.textContent = `✅ Sync complete! ${allRows.length} total records${newRecords > 0 ? ` (+${newRecords} new)` : ''}`;
+                
+            } catch (error) {
+                console.error('Sync error:', error);
+                statusText.textContent = `❌ Sync failed: ${error.message}`;
+                throw error;
+            } finally {
+                syncButton.disabled = false;
+                syncButton.textContent = 'Sync';
+            }
+        }
+
+        function mergeDatabase(local, remote) {
+            const merged = new Map();
+            const syncTimestamp = new Date().toISOString();
+            
+            // First, add all remote records
+            remote.forEach(item => {
+                merged.set(item.__id, {...item});
+            });
+            
+            // Then, overwrite with local records (local wins)
+            local.forEach(item => {
+                if (localChanges.has(item.__id)) {
+                    // This is a local change, update sync timestamp
+                    const updatedItem = {...item};
+                    
+                    // Apply local price changes
+                    if (dirtyById.has(item.__id)) {
+                        // Update the Price field to match CSV structure
+                        updatedItem.Price = dirtyById.get(item.__id);
+                    }
+                    
+                    updatedItem.lastSyncedAt = syncTimestamp;
+                    merged.set(item.__id, updatedItem);
+                } else {
+                    // Keep existing remote item (no local changes)
+                    // Don't overwrite remote
+                }
+            });
+            
+            return Array.from(merged.values());
+        }
+
+        function detectOverwrites(local, remote) {
+            const overwrites = [];
+            
+            local.forEach(localItem => {
+                if (localChanges.has(localItem.__id)) {
+                    const remoteItem = remote.find(r => r.__id === localItem.__id);
+                    if (remoteItem) {
+                        // Check if remote has been modified since our last sync
+                        if (remoteItem.lastSyncedAt && lastSyncTime) {
+                            const remoteSync = new Date(remoteItem.lastSyncedAt);
+                            const ourLastSync = new Date(lastSyncTime);
+                            if (remoteSync > ourLastSync) {
+                                overwrites.push(localItem.__id);
+                            }
+                        }
+                    }
+                }
+            });
+            
+            return overwrites;
+        }
+        
+
+        async function pushToGitHub() {
+            // Add sync timestamp to all records
+            const syncTimestamp = new Date().toISOString();
+            
+            // Convert database to CSV with semicolon delimiter
+            const csv = Papa.unparse(allRows, {
+                delimiter: ';'
+            });
+            const content = btoa(unescape(encodeURIComponent(csv))); // Better encoding for special characters
+            
+            const message = `Sync at ${new Date().toLocaleString()}`;
+            
+            const body = {
+                message: message,
+                content: content,
+                branch: 'main'
+            };
+            
+            if (lastCommitSha) {
+                body.sha = lastCommitSha;
+            }
+            
+            const response = await fetch(
+                `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${DEFAULT_FILE}`,
+                {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${authToken}`,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                }
+            );
+
+            if (response.ok) {
+                const data = await response.json();
+                lastCommitSha = data.content.sha;
+                lastSyncTime = syncTimestamp;
+                localStorage.setItem('lastSyncTime', lastSyncTime);
+            } else if (response.status === 401) {
+                handleTokenExpired();
+                throw new Error('Your access token has expired. Please log in again with a new token.');
+            } else {
+                const error = await response.json();
+                throw new Error(error.message || 'Failed to push to GitHub');
+            }
+        }
+
+        function displayEmpty() {
+            dataContainer.innerHTML = '<div class="empty-state">No data to display.</div>';
+            statusText.textContent = 'No data loaded.';
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function escapeAttr(text) {
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+        }
+
+        function openModal(imageUrl) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageUrl;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside or pressing Escape
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            // Escape key closes modal
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+            
+            // Ctrl+S or Cmd+S triggers sync (prevent default save behavior)
+            if ((event.ctrlKey || event.metaKey) && event.key === 's') {
+                event.preventDefault();
+                if (isAuthenticated && syncButton && !syncButton.disabled) {
+                    syncButton.click();
+                }
+            }
+            
+            // Ctrl+L or Cmd+L focuses search
+            if ((event.ctrlKey || event.metaKey) && event.key === 'l') {
+                event.preventDefault();
+                if (searchInput) {
+                    searchInput.focus();
+                    searchInput.select();
+                }
+            }
+            
+            // Ctrl+D or Cmd+D clears draft data (debug function)
+            if ((event.ctrlKey || event.metaKey) && event.key === 'd') {
+                event.preventDefault();
+                clearProblemDraftData();
+            }
+        });
+
+        // Mobile-specific enhancements
+        function initMobileEnhancements() {
+            // Detect mobile devices
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            
+            if (isMobile || isTouch) {
+                // Add mobile class to body for CSS targeting
+                document.body.classList.add('mobile-device');
+                
+                // Optimize table scrolling on mobile
+                const tableContainer = document.querySelector('.table-container');
+                if (tableContainer) {
+                    // Add momentum scrolling
+                    tableContainer.style.webkitOverflowScrolling = 'touch';
+                    
+                    // Add scroll indicators
+                    let scrollTimeout;
+                    tableContainer.addEventListener('scroll', function() {
+                        tableContainer.classList.add('scrolling');
+                        clearTimeout(scrollTimeout);
+                        scrollTimeout = setTimeout(() => {
+                            tableContainer.classList.remove('scrolling');
+                        }, 150);
+                    });
+                }
+                
+                // Prevent double-tap zoom on buttons (but allow our custom handlers to work)
+                document.addEventListener('touchend', function(event) {
+                    if ((event.target.tagName === 'BUTTON' || event.target.type === 'button') && 
+                        !event.target.hasAttribute('data-mobile-handler')) {
+                        event.preventDefault();
+                    }
+                });
+                
+                // Handle virtual keyboard on mobile
+                let initialViewportHeight = window.innerHeight;
+                window.addEventListener('resize', function() {
+                    const currentHeight = window.innerHeight;
+                    const heightDifference = initialViewportHeight - currentHeight;
+                    
+                    // If height decreased significantly, virtual keyboard is likely open
+                    if (heightDifference > 150) {
+                        document.body.classList.add('virtual-keyboard-open');
+                        
+                        // Adjust modal positioning if open
+                        const modal = document.getElementById('imageModal');
+                        if (modal && modal.style.display === 'block') {
+                            const modalContent = modal.querySelector('.modal-content');
+                            modalContent.style.top = '20px';
+                            modalContent.style.transform = 'translateX(-50%)';
+                        }
+                    } else {
+                        document.body.classList.remove('virtual-keyboard-open');
+                        
+                        // Reset modal positioning
+                        const modal = document.getElementById('imageModal');
+                        if (modal) {
+                            const modalContent = modal.querySelector('.modal-content');
+                            modalContent.style.top = '50%';
+                            modalContent.style.transform = 'translate(-50%, -50%)';
+                        }
+                    }
+                });
+                
+                // Auto-hide address bar on mobile Safari
+                if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+                    setTimeout(function() {
+                        window.scrollTo(0, 1);
+                    }, 100);
+                }
+            }
+            
+            // Enhanced touch handling for price inputs
+            document.addEventListener('touchstart', function(event) {
+                if (event.target.classList.contains('price-input')) {
+                    // Add visual feedback for touch
+                    event.target.style.transform = 'scale(1.02)';
+                    event.target.style.transition = 'transform 0.1s ease';
+                    
+                    setTimeout(() => {
+                        event.target.style.transform = '';
+                        event.target.style.transition = '';
+                    }, 100);
+                }
+            });
+            
+            // Improved modal touch handling
+            const modal = document.getElementById('imageModal');
+            if (modal) {
+                let startY;
+                let currentY;
+                let isDragging = false;
+                
+                modal.addEventListener('touchstart', function(e) {
+                    startY = e.touches[0].clientY;
+                    isDragging = true;
+                });
+                
+                modal.addEventListener('touchmove', function(e) {
+                    if (!isDragging) return;
+                    
+                    currentY = e.touches[0].clientY;
+                    const deltaY = currentY - startY;
+                    
+                    // Close modal if swiped down significantly
+                    if (deltaY > 100) {
+                        closeModal();
+                        isDragging = false;
+                    }
+                });
+                
+                modal.addEventListener('touchend', function() {
+                    isDragging = false;
+                });
+            }
+        }
+        
+        // Initialize mobile enhancements when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            initMobileEnhancements();
+        });
+
+        // Debug function to clear potentially problematic draft data
+        function clearProblemDraftData() {
+            localStorage.removeItem('priceDraft');
+            dirtyById.clear();
+            localChanges.clear();
+            console.log('Cleared draft data and local changes');
+            render();
+            alert('Draft data cleared. Try refreshing the page.');
+        }
+
+        // Auto-save drafts to localStorage
+        function saveDraft() {
+            // Only save changes that are actual user session modifications
+            if (localChanges.size > 0) {
+                const userChanges = {};
+                for (const key of localChanges) {
+                    if (dirtyById.has(key)) {
+                        userChanges[key] = dirtyById.get(key);
+                    }
+                }
+                
+                if (Object.keys(userChanges).length > 0) {
+                    const draftData = {
+                        changes: userChanges,
+                        timestamp: new Date().toISOString()
+                    };
+                    localStorage.setItem('priceDraft', JSON.stringify(draftData));
+                } else {
+                    localStorage.removeItem('priceDraft');
+                }
+            } else {
+                localStorage.removeItem('priceDraft');
+            }
+        }
+
+        function loadDraft() {
+            const savedDraft = localStorage.getItem('priceDraft');
+            if (savedDraft) {
+                try {
+                    const draftData = JSON.parse(savedDraft);
+                    const draftAge = Date.now() - new Date(draftData.timestamp).getTime();
+                    
+                    // Only restore draft if it's less than 24 hours old
+                    if (draftAge < 24 * 60 * 60 * 1000) {
+                        // Only restore draft changes that are actual user modifications
+                        // (not existing prices from CSV)
+                        Object.entries(draftData.changes).forEach(([key, value]) => {
+                            // Check if this is actually different from the original CSV value
+                            const originalRow = allRows.find(row => row.__id === key);
+                            const originalPrice = originalRow ? (originalRow['Price'] || '') : '';
+                            
+                            // Only restore if the draft value is different from original CSV
+                            if (value !== originalPrice) {
+                                dirtyById.set(key, value);
+                                localChanges.add(key);
+                                debugLog('Restored draft change', { key, originalPrice, draftValue: value });
+                            }
+                        });
+                        
+                        if (localChanges.size > 0) {
+                            statusText.textContent += ` • Draft restored: ${localChanges.size} unsaved changes`;
+                            render();
+                        }
+                    } else {
+                        localStorage.removeItem('priceDraft');
+                    }
+                } catch (e) {
+                    console.warn('Failed to load draft:', e);
+                    localStorage.removeItem('priceDraft');
+                }
+            }
+        }
+
+        // Save draft whenever changes are made - integrate into onPriceInputChange
+        const originalOnPriceInputChange = onPriceInputChange;
+        onPriceInputChange = function(e) {
+            originalOnPriceInputChange.call(this, e);
+            saveDraft();
+        };
+    </script>
+</body>
+</html>
