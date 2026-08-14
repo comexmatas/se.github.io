@@ -757,7 +757,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 833867;Depend PE Eyebrow Pen Ultra Thin Grafit;Depend;Makeup;C;https://www.kicks.se/sok?search-query=833867;;https://images.matas.dk/encode/833867_1_20240513153654.jpg;755;833867
 811164;Fenty Match Stix Matte Skinstick 003 Mocha;FENTY;Makeup;A;https://www.kicks.se/sok?search-query=811164;;https://images.matas.dk/encode/840026664004_20251209180856.jpg;756;811164
 826909;Burberry Hero Parfum EDP 50 ML (G);Burberry;Fragrances;B;https://www.kicks.se/sok?search-query=826909;;https://images.matas.dk/encode/3616304679452_20251106124700.jpg;757;826909
-826525;LOR Telescopic Lift Waterproof Mascara Black;L’Oréal Paris;Makeup;A;https://www.kicks.se/sok?search-query=826525;;https://images.matas.dk/encode/826525_1_20240123163512.jpg;758;826525
+826525;LOR Telescopic Lift Waterproof Mascara Black;L’Oréal Paris;Makeup;A;https://www.kicks.se/sok?search-query=826525;167.00;https://images.matas.dk/encode/826525_1_20240123163512.jpg;758;826525
 1023239;BY TERRY Crayon Blackstar N10 Crystal Glaze 1,2 g (G);By Terry;Makeup;C;https://www.kicks.se/sok?search-query=1023239;;https://images.matas.dk/encode/3700076462807_1_20250918040100.jpg;759;1023239
 790755;Löwengrip Deep Cleansing Detox Shampoo 100 ml;Löwengrip;Hair care and styling;B;https://www.kicks.se/sok?search-query=790755;;;760;790755
 1024477;Benefit Box O’ Powder Blush Willa;Benefit Cosmetics;Makeup;B;https://www.kicks.se/sok?search-query=1024477;;https://images.matas.dk/encode/602004138415_20250821180100.jpg;761;1024477
@@ -5349,7 +5349,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 1023502;LA Miniature Gaveæske Xmas25;Lancôme;Fragrances;A;https://www.kicks.se/sok?search-query=1023502;;https://images.matas.dk/encode/3614274654196_20251029180159.jpg;5347;1023502
 764971;Anastasia Beverly Hills Brow Pen Soft Brown;Anastasia Beverly Hills;Makeup;B;https://www.kicks.se/sok?search-query=764971;;https://images.matas.dk/encode/764971_1_20231018161257.jpg;5348;764971
 843456;NYX PMU Lip I.V. HG Stain Lipgloss 08 Drippin in Rose 5 ml;NYX PROFESSIONAL MAKEUP;Makeup;A;https://www.kicks.se/sok?search-query=843456;;https://images.matas.dk/encode/800897267032_20241217180900.jpg;5349;843456
-734136;LOR mascara Telescopic Extra Black (G);L’Oréal Paris;Makeup;AA;https://www.kicks.se/sok?search-query=734136;;https://images.matas.dk/encode/734136_1.jpg;5350;734136
+734136;LOR mascara Telescopic Extra Black (G);L’Oréal Paris;Makeup;AA;https://www.kicks.se/sok?search-query=734136;129.00;https://images.matas.dk/encode/734136_1.jpg;5350;734136
 1037669;Dr.Ceuracle PDRN & Retinol Shot Ampoule 30ml;Dr. Ceuracle;Skin care;B;https://www.kicks.se/sok?search-query=1037669;;https://images.matas.dk/encode/8806133617045-1_20260204180200.jpg;5351;1037669
 828103;Fenty Gloss Bomb Stick Spice Cold;FENTY;Makeup;C;https://www.kicks.se/sok?search-query=828103;;https://images.matas.dk/encode/840026672689_20240716160605.jpg;5352;828103
 1004211;NARS Light Reflecting Foundation Fiji 30ml;NARS;Makeup;B;https://www.kicks.se/sok?search-query=1004211;;https://images.matas.dk/encode/194251070506_1_20240826112713.jpg;5353;1004211
@@ -17413,7 +17413,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 832063;Sol de Janeiro Delicia Drench Body Butter 240 ml;Sol de Janeiro;Skin care;A;https://www.kicks.se/sok?search-query=832063;;https://images.matas.dk/encode/810912034853_20260701115000.jpg;17411;832063
 766161;Revlon Nutri Color Filters Tangerine 400 100 ml (W);Revlon Nutri Color;Hair care and styling;C;https://www.kicks.se/sok?search-query=766161;;https://images.matas.dk/encode/8007376047099_20240923143838.jpg;17412;766161
 1031658;FIL Hand Pigment Protocol 50 ml (G);Filorga;Skin care;B;https://www.kicks.se/sok?search-query=1031658;;https://images.matas.dk/encode/3540550020594_20251216210100.jpg;17413;1031658
-575098;LOR Mascara Telescopic black (G);L’Oréal Paris;Makeup;AA;https://www.kicks.se/sok?search-query=575098;;https://images.matas.dk/encode/3600520881799_20250326180500.jpg;17414;575098
+575098;LOR Mascara Telescopic black (G);L’Oréal Paris;Makeup;AA;https://www.kicks.se/sok?search-query=575098;129.00;https://images.matas.dk/encode/3600520881799_20250326180500.jpg;17414;575098
 1030156;Dior Forever Skin Wear 2WP 30 ml (G);DIOR;Makeup;C;https://www.kicks.se/sok?search-query=1030156;;https://images.matas.dk/encode/3348901792745_20260216143400.jpg;17415;1030156
 818199;SK Hand Soap 250 ml;Susanne Kaufmann;Skin care;C;https://www.kicks.se/sok?search-query=818199;;https://images.matas.dk/encode/818199_20231219173819.jpg;17416;818199
 694204;Sachajuan Shampoo Scalp 250 ml (W);Sachajuan;Hair care and styling;B;https://www.kicks.se/sok?search-query=694204;;https://images.matas.dk/encode/7350016331265_20241127182100.jpg;17417;694204
@@ -17681,7 +17681,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 823894;ghd Flight & Travel Hair Dryer;ghd;Hair care and styling;B;https://www.kicks.se/sok?search-query=823894;;https://images.matas.dk/encode/5060777125950.jpg;17679;823894
 791077;NYX PMU Shine Loud High Pigment Lip Shine Stay Stuntin (G);NYX PROFESSIONAL MAKEUP;Makeup;C;https://www.kicks.se/sok?search-query=791077;;https://images.matas.dk/encode/791077_1.jpg;17680;791077
 803372;DIOR DSHOW COUL 5C COUTURE E/SHAD 673 INT23;DIOR;Makeup;C;https://www.kicks.se/sok?search-query=803372;;;17681;803372
-801788;LOR Telescopic Lift Mascara Black;L’Oréal Paris;Makeup;B;https://www.kicks.se/sok?search-query=801788;;https://images.matas.dk/encode/30152540_20240513163718.jpg;17682;801788
+801788;LOR Telescopic Lift Mascara Black;L’Oréal Paris;Makeup;B;https://www.kicks.se/sok?search-query=801788;167.00;https://images.matas.dk/encode/30152540_20240513163718.jpg;17682;801788
 1005654;Fan Palm Beauty Queen Blue Blossom One Size;Fan Palm;Clothing, shoes and accessories;C;https://www.kicks.se/sok?search-query=1005654;;https://images.matas.dk/encode/5744001181430_1_20240812154258.jpg;17683;1005654
 800104;CLI Even Better All Over Conceal+Eraser WN 01 Flax;Clinique;Makeup;C;https://www.kicks.se/sok?search-query=800104;;https://images.matas.dk/encode/800104_1_20231024055903.jpg;17684;800104
 769077;Anastasia Luminous Foundation 150W;Anastasia Beverly Hills;Makeup;C;https://www.kicks.se/sok?search-query=769077;;https://images.matas.dk/encode/689304360388_20251023181400.jpg;17685;769077
