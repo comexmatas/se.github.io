@@ -379,7 +379,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 801992;OH Glow Icon Set;Ole Henriksen;Skin care;B;https://www.kicks.se/sok?search-query=801992;;https://images.matas.dk/encode/840026663458_20251010121200.jpg;377;801992
 1002038;KORRES Aloe + Dittany Shampoo For Normal Hair 250 ml;Korres;Hair care and styling;C;https://www.kicks.se/sok?search-query=1002038;;https://images.matas.dk/encode/5203069040689_20240411153849.jpg;378;1002038
 844081;RITUALS The Ritual of Karma Overnight Body Mask 125 ml;RITUALS;Skin care;B;https://www.kicks.se/sok?search-query=844081;;https://images.matas.dk/encode/8719134201758_1_20250114180300.jpg;379;844081
-1035064;Batiste Dry Shampoo Sensitive Light Fragrance 200 ml;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=1035064;;https://images.matas.dk/encode/5010724000762_20260204180300.jpg;380;1035064
+1035064;Batiste Dry Shampoo Sensitive Light Fragrance 200 ml;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=1035064;45.00;https://images.matas.dk/encode/5010724000762_20260204180300.jpg;380;1035064
 1026512;Too Faced BTW Super Coverage Conceale LightBeige 13,5 ml;Too Faced;Makeup;B;https://www.kicks.se/sok?search-query=1026512;;;381;1026512
 1010637;JPG Le Male Elixir Absolu Parfum 125 ml (G);Jean Paul Gaultier;Fragrances;B;https://www.kicks.se/sok?search-query=1010637;;https://images.matas.dk/encode/8435415102346_20250505180303.jpg;382;1010637
 714481;LOR True Match  The One Concealer 2C Vanilla Rose (M);L’Oréal Paris;Makeup;A;https://www.kicks.se/sok?search-query=714481;;https://images.matas.dk/encode/714481_1_20231018154718.jpg;383;714481
@@ -934,7 +934,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 838438;NYX Powder Louder 09 Black brynpen 16 g;NYX PROFESSIONAL MAKEUP;Makeup;C;https://www.kicks.se/sok?search-query=838438;;https://images.matas.dk/encode/800897257538_20240627124310.jpg;932;838438
 719907;VCA GARDENIA EDP 75 ML (W);Van Cleef & Arpels;Fragrances;C;https://www.kicks.se/sok?search-query=719907;;;933;719907
 1002861;HYGGE Soft Reset Green Cleansing Foam 150 ml;Hyggee;Skin care;C;https://www.kicks.se/sok?search-query=1002861;;https://images.matas.dk/encode/8809561820506_20251106180400.jpg;934;1002861
-778115;Got2b Dry shampoo extra fresh 200ml (U) FLP;Got2b;Hair care and styling;C;https://www.kicks.se/sok?search-query=778115;;https://images.matas.dk/encode/778115_1_20231018161803.jpg;935;778115
+778115;Got2b Dry shampoo extra fresh 200ml (U) FLP;Got2b;Hair care and styling;C;https://www.kicks.se/sok?search-query=778115;48.00;https://images.matas.dk/encode/778115_1_20231018161803.jpg;935;778115
 890740;BP Rense Mousse 150 ml;Beauté Pacifique;Skin care;C;https://www.kicks.se/sok?search-query=890740;;https://images.matas.dk/encode/890740_1.jpg;936;890740
 829813;Anastasia Lip Velvet Crush;Anastasia Beverly Hills;Makeup;C;https://www.kicks.se/sok?search-query=829813;;https://images.matas.dk/encode/689304194563_20251023181909.jpg;937;829813
 708526;Azzaro Chrome EDT 50 Ml (W);Azzaro;Fragrances;C;https://www.kicks.se/sok?search-query=708526;;https://images.matas.dk/encode/3351500020386_20250306180207.jpg;938;708526
@@ -3822,7 +3822,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 1013057;DJ Cicapair Gentle Cleasing Foam 150 ml (U);Dr. Jart+;Skin care;C;https://www.kicks.se/sok?search-query=1013057;;https://images.matas.dk/encode/8809933610353_20250303180100.jpg;3820;1013057
 1004350;NARS Pure Radiant Tinted Moisturizer SPF30 Auckland 50ml;NARS;Makeup;C;https://www.kicks.se/sok?search-query=1004350;;https://images.matas.dk/encode/194251013350_1_20240827154721.jpg;3821;1004350
 803263;DIOR ADD LIP MAX 038 INT23;DIOR;Makeup;B;https://www.kicks.se/sok?search-query=803263;;https://images.matas.dk/encode/803263_1_20231024091434.jpg;3822;803263
-657975;Batiste Dry Shampoo Original 200 ml (P) FLP;Batiste;Hair care and styling;B;https://www.kicks.se/sok?search-query=657975;;https://images.matas.dk/encode/5010724527481_1_20240910171420.jpg;3823;657975
+657975;Batiste Dry Shampoo Original 200 ml (P) FLP;Batiste;Hair care and styling;B;https://www.kicks.se/sok?search-query=657975;45.00;https://images.matas.dk/encode/5010724527481_1_20240910171420.jpg;3823;657975
 1032796;Benefit Juice Stick Jam Cream Blush;Benefit Cosmetics;Makeup;C;https://www.kicks.se/sok?search-query=1032796;;https://images.matas.dk/encode/602004167347_20260318111000.jpg;3824;1032796
 724935;Dior Miss Dior Blooming Bouquet - Roller Pearl 20ml;DIOR;Fragrances;B;https://www.kicks.se/sok?search-query=724935;;https://images.matas.dk/encode/724935_1_20260311134000.jpg;3825;724935
 1023117;CLI Just Browsing Tinted Volumizing Gel Ebony Ebony (G);Clinique;Makeup;C;https://www.kicks.se/sok?search-query=1023117;;https://images.matas.dk/encode/192333271063_20250812180000.jpg;3826;1023117
@@ -5052,7 +5052,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 815999;Bobbi Brown Sheer Finish Pressed Powder Pale Yellow;Bobbi Brown;Makeup;C;https://www.kicks.se/sok?search-query=815999;;https://images.matas.dk/encode/716170294285_20260807040711.jpg;5050;815999
 735810;Weleda Skin Food Butter 150 ml;Weleda;Skin care;C;https://www.kicks.se/sok?search-query=735810;;https://images.matas.dk/encode/4001638526708_20260417040100.jpg;5051;735810
 774611;LA Lash Idole Liner;Lancôme;Makeup;A;https://www.kicks.se/sok?search-query=774611;;https://images.matas.dk/encode/774611_1_20231023200548.jpg;5052;774611
-690402;Batiste Dry Shampoo Bare 200 ml (G) FLP;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=690402;;https://images.matas.dk/encode/690402_1.jpg;5053;690402
+690402;Batiste Dry Shampoo Bare 200 ml (G) FLP;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=690402;45.00;https://images.matas.dk/encode/690402_1.jpg;5053;690402
 1024524;Benefit Goof Proof Brow Pencil 04;Benefit Cosmetics;Makeup;B;https://www.kicks.se/sok?search-query=1024524;;https://images.matas.dk/encode/602004071262_20260604103200.jpg;5054;1024524
 1020269;Dior Backstage Rosy Glow 006 Berry 4,5 g (G);DIOR;Makeup;B;https://www.kicks.se/sok?search-query=1020269;;https://images.matas.dk/encode/3348901770507_20250422092900.jpg;5055;1020269
 838424;NYX Fat Oil Lip Drip 09 Chillin’ Like A Villian lip gloss (G;NYX PROFESSIONAL MAKEUP;Makeup;B;https://www.kicks.se/sok?search-query=838424;;https://images.matas.dk/encode/800897261535_20250312181101.jpg;5056;838424
@@ -7692,7 +7692,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 825159;EL Futurist Skintint Serum Found Spf20 6N1 Mocha 30ml;Estée Lauder;Makeup;C;https://www.kicks.se/sok?search-query=825159;;https://images.matas.dk/encode/887167613331_20240508125721.jpg;7690;825159
 767704;CL EB Clinical Serum Fdt Spf 20-Cn 10 Alabaster 30 (G);Clinique;Makeup;C;https://www.kicks.se/sok?search-query=767704;;;7691;767704
 763213;bMin Mineralist Hydra-Smoothing Lipstick Intuition (G);bareMinerals;Makeup;C;https://www.kicks.se/sok?search-query=763213;;https://images.matas.dk/encode/98132573622_20240117153601.jpg;7692;763213
-1024293;Got2b Got Gloss Shine Finish Spray 200ml;Got2b;Hair care and styling;C;https://www.kicks.se/sok?search-query=1024293;;https://images.matas.dk/encode/5012583212331_1_20250625061700.jpg;7693;1024293
+1024293;Got2b Got Gloss Shine Finish Spray 200ml;Got2b;Hair care and styling;C;https://www.kicks.se/sok?search-query=1024293;48.00;https://images.matas.dk/encode/5012583212331_1_20250625061700.jpg;7693;1024293
 671709;Eylure Kunstige øjenvipper enkeltvip. Combo Knot Free (M);Eylure;Makeup;B;https://www.kicks.se/sok?search-query=671709;;https://images.matas.dk/encode/671709_1.jpg;7694;671709
 811190;Fenty Cheeks Out Freestyle Cream Bronzer 006 Choc;FENTY;Makeup;C;https://www.kicks.se/sok?search-query=811190;;https://images.matas.dk/encode/840026643283_20251209180700.jpg;7695;811190
 1002342;Lenoites Eco-Friendly Hair Claw Pearly pink;Lenoites;Hair care and styling;C;https://www.kicks.se/sok?search-query=1002342;;https://images.matas.dk/encode/7350136850967_20240315084726.jpg;7696;1002342
@@ -8501,7 +8501,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 576633;Gill. Fusion5-Barberblade x 4 (P);Gillette;Personal care;B;https://www.kicks.se/sok?search-query=576633;;https://images.matas.dk/encode/576633_1.jpg;8499;576633
 839585;Ecooking AHA+BHA Mask 50 ml;Ecooking;Skin care;C;https://www.kicks.se/sok?search-query=839585;;https://images.matas.dk/encode/5712350500103_1_20250502092100.jpg;8500;839585
 791397;COSRX AC Collection Lightweight Soothing Moisturizer2.0 80ml;COSRX;Skin care;B;https://www.kicks.se/sok?search-query=791397;;https://images.matas.dk/encode/791397_20240711154439.jpg;8501;791397
-657974;Batiste Dry Shampoo Cherry 200 ml (W) FLP;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=657974;;https://images.matas.dk/encode/657974_1_20231024095603.jpg;8502;657974
+657974;Batiste Dry Shampoo Cherry 200 ml (W) FLP;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=657974;45.00;https://images.matas.dk/encode/657974_1_20231024095603.jpg;8502;657974
 798362;Cetaphil Facial Lotion 118 ml;Cetaphil;Skin care;C;https://www.kicks.se/sok?search-query=798362;;https://images.matas.dk/encode/3499320014403_1_20260206111400.jpg;8503;798362
 815271;DIOR VERNIS 648 INT23;DIOR;Makeup;C;https://www.kicks.se/sok?search-query=815271;;https://images.matas.dk/encode/3348901673136.jpg;8504;815271
 781368;MAC MACstack Mascara Black S 12ml;MAC;Makeup;A;https://www.kicks.se/sok?search-query=781368;;https://images.matas.dk/encode/773602593040_20240607121528.jpg;8505;781368
@@ -12811,7 +12811,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 1009821;Dior Addict Lip Glow 020 Mahogany 3,2 g;DIOR;Makeup;B;https://www.kicks.se/sok?search-query=1009821;;https://images.matas.dk/encode/3348901729253_20241206123300.jpg;12809;1009821
 794318;BaByliss Hydro-Fusion Straightener Blå ST573E;BaByliss;Hair care and styling;C;https://www.kicks.se/sok?search-query=794318;;;12810;794318
 1032171;Moschino Gummy EdP Natural Spray 100 ml;Moschino;Fragrances;C;https://www.kicks.se/sok?search-query=1032171;;https://images.matas.dk/encode/8011003909827_20260616182643.jpg;12811;1032171
-657971;Batiste Dry Shampoo Brilliant Blonde 200 ml (X) FLP;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=657971;;https://images.matas.dk/encode/5010724527467_20240918143323.jpg;12812;657971
+657971;Batiste Dry Shampoo Brilliant Blonde 200 ml (X) FLP;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=657971;45.00;https://images.matas.dk/encode/5010724527467_20240918143323.jpg;12812;657971
 789848;GUERLAIN Ombres G Eyeshadow 555 Metal Butterfly;Guerlain;Makeup;C;https://www.kicks.se/sok?search-query=789848;;https://images.matas.dk/encode/3346470441194_20250402040100.jpg;12813;789848
 835962;Clean Classic Vanilla Cloud 30 ml;Clean;Fragrances;B;https://www.kicks.se/sok?search-query=835962;;https://images.matas.dk/encode/874034014971_20240913193411.jpg;12814;835962
 1024057;Rabanne Olympea Elixir EDP 30 ml (G);Rabanne;Fragrances;C;https://www.kicks.se/sok?search-query=1024057;;https://images.matas.dk/encode/3349668662913_20260310095200.jpg;12815;1024057
@@ -13544,7 +13544,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 1024014;LOR Infaillible Skin Ink Foundation 40 Warm 15 ml;L’Oréal Paris;Makeup;B;https://www.kicks.se/sok?search-query=1024014;;https://images.matas.dk/encode/3600524190170_7_20250820180100.jpg;13542;1024014
 769380;SB Halo Healthy Glow Tinted Mois SPF 25 Deep 40ml;Smashbox;Skin care;C;https://www.kicks.se/sok?search-query=769380;;;13543;769380
 739582;Sisley Sisleyleÿa l’Integral Hand Cream spf30 75 ml;Sisley;Skin care;C;https://www.kicks.se/sok?search-query=739582;;;13544;739582
-657973;Batiste Dry Shampoo Hint of Colour Brunette 200 ml (P) FLP;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=657973;;https://images.matas.dk/encode/5010724527474_20260728180100.jpg;13545;657973
+657973;Batiste Dry Shampoo Hint of Colour Brunette 200 ml (P) FLP;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=657973;45.00;https://images.matas.dk/encode/5010724527474_20260728180100.jpg;13545;657973
 1018493;Kiko Milano Long Lasting Eyeshadow Stick 11;Kiko Milano;Makeup;C;https://www.kicks.se/sok?search-query=1018493;;https://images.matas.dk/encode/8059385004402_20250409181600.jpg;13546;1018493
 1024331;CL Double Serum Gaveæske Xmas25;Clarins;Skin care;B;https://www.kicks.se/sok?search-query=1024331;;https://images.matas.dk/encode/3666057389610_20250910180938.jpg;13547;1024331
 800057;Moroccanoil  Aquamarine Color Depositing Mask 200ml;Moroccanoil;Hair care and styling;C;https://www.kicks.se/sok?search-query=800057;;https://images.matas.dk/encode/7290113140707.jpg;13548;800057
@@ -13778,7 +13778,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 839954;Elf Perfect Finish HD Powder Sheer FLP;e.l.f.;Makeup;C;https://www.kicks.se/sok?search-query=839954;;https://images.matas.dk/encode/609332832572_20240702081522.jpg;13776;839954
 825587;YSL Loveshine Wet Shine Lipstick 212;Yves Saint Laurent;Makeup;C;https://www.kicks.se/sok?search-query=825587;;https://images.matas.dk/encode/3614274132809_20240412110128.jpg;13777;825587
 789840;Guerlain Orchidee Imperiale Eye & Lip Cream 20 ml;Guerlain;Skin care;C;https://www.kicks.se/sok?search-query=789840;;https://images.matas.dk/encode/3346470616875_20251017132000.jpg;13778;789840
-771119;Batiste Dry Shampoo Hint of Color Dark Hair 200 ml (M) FLP;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=771119;;https://images.matas.dk/encode/5010724527443_20240918143352.jpg;13779;771119
+771119;Batiste Dry Shampoo Hint of Color Dark Hair 200 ml (M) FLP;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=771119;45.00;https://images.matas.dk/encode/5010724527443_20240918143352.jpg;13779;771119
 827752;Sensai Foundation Sponge Round Shape;Sensai;Makeup;B;https://www.kicks.se/sok?search-query=827752;;https://images.matas.dk/encode/4973167525920_20231228145243.jpg;13780;827752
 1001367;BAREPRO 24H Skin-Perfecting Matte Liquid Foundation;bareMinerals;Makeup;C;https://www.kicks.se/sok?search-query=1001367;;https://images.matas.dk/encode/194248062934_20240917171522.jpg;13781;1001367
 1010673;OH BALANCE OTC Toner (P);Ole Henriksen;Skin care;C;https://www.kicks.se/sok?search-query=1010673;;https://images.matas.dk/encode/840026675277_20250423180256.jpg;13782;1010673
@@ -14906,7 +14906,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 1024166;ES The Sculpting Blush Rebellious Rose 7,0 g;Estée Lauder;Makeup;B;https://www.kicks.se/sok?search-query=1024166;;https://images.matas.dk/encode/887167724297_20251121180501.jpg;14904;1024166
 811269;Fenty Gloss Bomb Heat Universal Lip Lum + Plum Lip 003 Fenty;FENTY;Makeup;B;https://www.kicks.se/sok?search-query=811269;;https://images.matas.dk/encode/840026657655_swatch.jpg;14905;811269
 889781;Sisley Eau Du Soir Edp 30 Ml;Sisley;Fragrances;C;https://www.kicks.se/sok?search-query=889781;;;14906;889781
-657972;Batiste Dry Shampoo Blush 200 ml (G) FLP;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=657972;;https://images.matas.dk/encode/657972_1_20231024160504.jpg;14907;657972
+657972;Batiste Dry Shampoo Blush 200 ml (G) FLP;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=657972;45.00;https://images.matas.dk/encode/657972_1_20231024160504.jpg;14907;657972
 811872;Fenty Match Stix Highligther Crown’d;FENTY;Makeup;C;https://www.kicks.se/sok?search-query=811872;;https://images.matas.dk/encode/840026658409_20251209181017.jpg;14908;811872
 1004593;NARS Powermatte Lip Pigment Le Freak;NARS;Makeup;C;https://www.kicks.se/sok?search-query=1004593;;https://images.matas.dk/encode/194251021621_1_20240927133510.jpg;14909;1004593
 757071;Sensai Cellular Performance Cream Foundation 30 ml Natural B;Sensai;Makeup;B;https://www.kicks.se/sok?search-query=757071;;https://images.matas.dk/encode/4973167907375_20251219181400.jpg;14910;757071
@@ -15899,7 +15899,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 1030875;Versace Atelier Gingembre Pétillant EdP 100 ml;Versace;Fragrances;C;https://www.kicks.se/sok?search-query=1030875;;https://images.matas.dk/encode/8011003863761_20260708180633.jpg;15897;1030875
 738872;MAC 76 Lash (W);MAC;Makeup;C;https://www.kicks.se/sok?search-query=738872;;;15898;738872
 759920;Real Techniques Miracle Powder Sponge (M);Real Techniques;Makeup;C;https://www.kicks.se/sok?search-query=759920;;https://images.matas.dk/encode/079625018943_20260728180200.jpg;15899;759920
-1035065;Batiste Dry Shampoo Soft Cashmere 200 ml;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=1035065;;https://images.matas.dk/encode/5010724007372_20260204180600.jpg;15900;1035065
+1035065;Batiste Dry Shampoo Soft Cashmere 200 ml;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=1035065;45.00;https://images.matas.dk/encode/5010724007372_20260204180600.jpg;15900;1035065
 844890;Depend Eyebrow Pen Twin Thin Dark Brown Nord;Depend;Makeup;C;https://www.kicks.se/sok?search-query=844890;;https://images.matas.dk/encode/844890_20250619180500.jpg;15901;844890
 767674;Olaplex No. 6 Bond Smoother 100 ml;Olaplex;Hair care and styling;AA;https://www.kicks.se/sok?search-query=767674;;https://images.matas.dk/encode/767674_20240315094206.jpg;15902;767674
 811300;Fenty Icon Velvet Liquid Lipstick 4 Riri;FENTY;Makeup;C;https://www.kicks.se/sok?search-query=811300;;https://images.matas.dk/encode/840026666305.jpg;15903;811300
@@ -18530,7 +18530,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 1022697;MAC Eye Shadow Pro Palette Refill Pan Metallic Locket (W);MAC;Makeup;C;https://www.kicks.se/sok?search-query=1022697;;https://images.matas.dk/encode/773602753956_20250910180500.jpg;18528;1022697
 1030240;Dior Addict Glass 939 (W);DIOR;Makeup;C;https://www.kicks.se/sok?search-query=1030240;;https://images.matas.dk/encode/3348901811590_20260421124000.jpg;18529;1030240
 826797;BAX Scalp Conditioner 250 ml;Björn Axén;Hair care and styling;A;https://www.kicks.se/sok?search-query=826797;;https://images.matas.dk/encode/7350001705798_20240919153929.jpg;18530;826797
-838781;Batiste Dry Shampoo Sensitive 200 ml;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=838781;;https://images.matas.dk/encode/5010724004104_20250203180150.jpg;18531;838781
+838781;Batiste Dry Shampoo Sensitive 200 ml;Batiste;Hair care and styling;C;https://www.kicks.se/sok?search-query=838781;45.00;https://images.matas.dk/encode/5010724004104_20250203180150.jpg;18531;838781
 1033180;LOR Hyaluron Lip Stain Serum Worth it 5 ml;L’Oréal Paris;Makeup;A;https://www.kicks.se/sok?search-query=1033180;;https://images.matas.dk/encode/3600524242763_20260409180225.jpg;18532;1033180
 783226;GUERLAIN Abeille Royale Intense Repair Balm 80 ml;Guerlain;Skin care;C;https://www.kicks.se/sok?search-query=783226;;https://images.matas.dk/encode/783226_4.jpg;18533;783226
 1026400;Too Faced Milk Chocolate Soleil Bronzer 8 g;Too Faced;Makeup;B;https://www.kicks.se/sok?search-query=1026400;;https://images.matas.dk/encode/651986702343_20250929144700.jpg;18534;1026400
@@ -21232,7 +21232,7 @@ Product ID;Product;Brand;product_category_name_level_1_eng;pricing_role_category
 1026380;Too Faced Kissing Jelly Birthday Kiss 4,5 ml;Too Faced;Makeup;B;https://www.kicks.se/sok?search-query=1026380;;https://images.matas.dk/encode/651986029372_20250929144700.jpg;21230;1026380
 745090;D&G K by Dolce & Gabbana EDT 100ml (M);Dolce & Gabbana;Fragrances;B;https://www.kicks.se/sok?search-query=745090;;https://images.matas.dk/encode/8057971181544_20250508083300.jpg;21231;745090
 754275;MAC EYE BROWS BIG BOOST FIBRE GEL-STYLIZED 4,1g (G);MAC;Makeup;B;https://www.kicks.se/sok?search-query=754275;;https://images.matas.dk/encode/754275_Swatch_20231027184110.jpg;21232;754275
-676288;Batiste Dry Shampoo Heavenly Volume 200 ml (P) FLP;Batiste;Hair care and styling;B;https://www.kicks.se/sok?search-query=676288;;https://images.matas.dk/encode/5010724528938_20240918143328.jpg;21233;676288
+676288;Batiste Dry Shampoo Heavenly Volume 200 ml (P) FLP;Batiste;Hair care and styling;B;https://www.kicks.se/sok?search-query=676288;45.00;https://images.matas.dk/encode/5010724528938_20240918143328.jpg;21233;676288
 800191;CLI Even Better Makeup Spf 15 Cream Whip 18 Cn 30 ml;Clinique;Makeup;C;https://www.kicks.se/sok?search-query=800191;;https://images.matas.dk/encode/800191_1_20231023215708.jpg;21234;800191
 736709;JUR Radiant Skin Foaming Cleanser 100 ml (M);Jurlique;Skin care;C;https://www.kicks.se/sok?search-query=736709;;https://images.matas.dk/encode/736709_20240717163822.jpg;21235;736709
 1018435;Kiko Milano 3D Hydra Lipgloss 013;Kiko Milano;Makeup;C;https://www.kicks.se/sok?search-query=1018435;;https://images.matas.dk/encode/8025272603997_20250409181600.jpg;21236;1018435
