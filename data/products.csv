@@ -3093,7 +3093,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 1010172;D&G Q by Dolce&Gabbana Parfum 30 ml;Dolce & Gabbana;Fragrances;C;https://www.kicks.se/sok?search-query=1010172;;https://images.matas.dk/encode/8054754405033_20250508082900.jpg;3091;1010172
 843208;ABC B12 Pink Serum 30 ml;Australian Bodycare;Skin care;C;https://www.kicks.se/sok?search-query=843208;;https://images.matas.dk/encode/5709455018893_20241125181448.jpg;3092;843208
 724065;Sisley Restructuring Conditioner 200 Ml;Sisley;Hair care and styling;C;https://www.kicks.se/sok?search-query=724065;;;3093;724065
-804449;Elvital Bond Repair Leave In Serum 150 ml FLP;L’Oréal Paris;Hair care and styling;C;https://www.kicks.se/sok?search-query=804449;;https://images.matas.dk/encode/3600524075644_20251217180151.jpg;3094;804449
+804449;Elvital Bond Repair Leave In Serum 150 ml FLP;L’Oréal Paris;Hair care and styling;C;https://www.kicks.se/sok?search-query=804449;114.00;https://images.matas.dk/encode/3600524075644_20251217180151.jpg;3094;804449
 809335;Balmain Cellulose Acetate Barrette Pour Cheveux Large Black;BALMAIN PARIS Hair Couture;Hair care and styling;C;https://www.kicks.se/sok?search-query=809335;;https://images.matas.dk/encode/809335_1_20231023201328.jpg;3095;809335
 653699;RC Organic Sun Face Cream 30 Spf 50 ml (P);Rudolph Care;Skin care;C;https://www.kicks.se/sok?search-query=653699;;https://images.matas.dk/encode/653699_1.jpg;3096;653699
 698866;CLI Almost Powder Makeup Spf 15 02 Neutral Fair (M);Clinique;Makeup;B;https://www.kicks.se/sok?search-query=698866;;;3097;698866
@@ -10666,7 +10666,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 787845;R+Co BEL AIR Smoothing Conditioner 251 ml;R+Co;Hair care and styling;C;https://www.kicks.se/sok?search-query=787845;;;10664;787845
 94065298;J Beverly Hills Masque Treatment Blue 340 ml;J Beverly Hills;Hair care and styling;A;https://www.kicks.se/sok?search-query=94065298;;https://images.matas.dk/encode/94065298_20250716163300.jpg;10665;94065298
 94019537;CRISTIANO RONALDO Game On edt male 30 ml;CRISTIANO RONALDO;Fragrances;C;https://www.kicks.se/sok?search-query=94019537;;https://images.matas.dk/encode/94019537_20250714151700.jpg;10666;94019537
-90007313;Elvital Dream Length Balsam 200 ml;L’Oréal Paris;Hair care and styling;C;https://www.kicks.se/sok?search-query=90007313;;https://images.matas.dk/encode/90007313_20250711143100.jpg;10667;90007313
+90007313;Elvital Dream Length Balsam 200 ml;L’Oréal Paris;Hair care and styling;C;https://www.kicks.se/sok?search-query=90007313;52.00;https://images.matas.dk/encode/90007313_20250711143100.jpg;10667;90007313
 94133293;Remington Pro-Ceramic Extra Straightener White;Remington;Hair care and styling;B;https://www.kicks.se/sok?search-query=94133293;;https://images.matas.dk/encode/94133293_20250721162700.jpg;10668;94133293
 94137219;BABOR Set HY-ÖL & Phyto Balancing 300 ml;BABOR;Skin care;C;https://www.kicks.se/sok?search-query=94137219;;https://images.matas.dk/encode/94137219_20250721163900.jpg;10669;94137219
 94128176;Pixi Lip Blush Purity;Pixi;Makeup;C;https://www.kicks.se/sok?search-query=94128176;;https://images.matas.dk/encode/94128176_20250721121900.jpg;10670;94128176
@@ -19536,7 +19536,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 1022534;TF Eau d’Ombre Leather Eau de Toilette 10 ml;TOM FORD;Fragrances;C;https://www.kicks.se/sok?search-query=1022534;;https://images.matas.dk/encode/888066179768_20250730180100.jpg;19534;1022534
 1023496;LSC The Glow Duo Gaveæske Til Normal Hud Xmas25;L’Oréal Paris;Skin care;A;https://www.kicks.se/sok?search-query=1023496;;https://images.matas.dk/encode/5703147598342_20250606180100.jpg;19535;1023496
 825250;Bobbi Brown Crushed Oil-Infused Gloss Bare Sparkle (G);Bobbi Brown;Makeup;C;https://www.kicks.se/sok?search-query=825250;;https://images.matas.dk/encode/716170257167_20240126124142.jpg;19536;825250
-828932;Elvital Glycolic Gloss Leave-in Serum 150 ml FLP;L’Oréal Paris;Hair care and styling;B;https://www.kicks.se/sok?search-query=828932;;https://images.matas.dk/encode/3600524135447_1_20240129153501.jpg;19537;828932
+828932;Elvital Glycolic Gloss Leave-in Serum 150 ml FLP;L’Oréal Paris;Hair care and styling;B;https://www.kicks.se/sok?search-query=828932;114.00;https://images.matas.dk/encode/3600524135447_1_20240129153501.jpg;19537;828932
 838261;Sisley Ligne Noire Eyeliner 1 Deep Black;Sisley;Makeup;C;https://www.kicks.se/sok?search-query=838261;;https://images.matas.dk/encode/3473311853226_20240724173902.jpg;19538;838261
 731259;CLI Lash Power Mascara Black 6ml;Clinique;Makeup;AA;https://www.kicks.se/sok?search-query=731259;;https://images.matas.dk/encode/020714979089_20240607105943.jpg;19539;731259
 810542;SHI Revital Essence Glow Foundation 240;Shiseido;Makeup;C;https://www.kicks.se/sok?search-query=810542;;https://images.matas.dk/encode/729238193512.jpg;19540;810542
