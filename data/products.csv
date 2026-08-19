@@ -164,7 +164,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 801776;Löwengrip Healthy Glow Hand Balm 50 ml;Löwengrip;Skin care;C;https://www.kicks.se/sok?search-query=801776;;https://images.matas.dk/encode/801776_1_20231023141930.jpg;162;801776
 814520;ZENZ Organic Styling 13 Styling gel pure 130 ML;ZENZ;Hair care and styling;C;https://www.kicks.se/sok?search-query=814520;;https://images.matas.dk/encode/5715012002151.jpg;163;814520
 796000;La Bruket 093 Body Lotion Bergamot/Patchouli 240 ml;LA BRUKET;Skin care;C;https://www.kicks.se/sok?search-query=796000;;https://images.matas.dk/encode/796000_1_20231024111629.jpg;164;796000
-680343;LSC Age Perfect Rosy Glow Dagcreme 50 ml (G) FLP;L’Oréal Paris;Skin care;A;https://www.kicks.se/sok?search-query=680343;;https://images.matas.dk/encode/3600523216253_20260319180240.jpg;165;680343
+680343;LSC Age Perfect Rosy Glow Dagcreme 50 ml (G) FLP;L’Oréal Paris;Skin care;A;https://www.kicks.se/sok?search-query=680343;140.00;https://images.matas.dk/encode/3600523216253_20260319180240.jpg;165;680343
 829720;MAY Sunkisser Blush City Sizzle 6 FLP;Maybelline;Makeup;C;https://www.kicks.se/sok?search-query=829720;;https://images.matas.dk/encode/3600531668440_20240909155733.jpg;166;829720
 779983;CL Instant Comfort Lip Oil 02 Raspberry;Clarins;Makeup;A;https://www.kicks.se/sok?search-query=779983;;https://images.matas.dk/encode/3666057059377_20250120180837.jpg;167;779983
 1024606;Benefit Precisely My Brow Wax 06;Benefit Cosmetics;Makeup;C;https://www.kicks.se/sok?search-query=1024606;;https://images.matas.dk/encode/602004151711_20250902142200.jpg;168;1024606
@@ -1540,7 +1540,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 819614;Fenty We’re Even Hydrating Longwear Concealer 14;FENTY;Makeup;C;https://www.kicks.se/sok?search-query=819614;;https://images.matas.dk/encode/840026665346_20231114113947.jpg;1538;819614
 836723;IDUN Nail Polish Rökkvarts;IDUN Minerals;Makeup;C;https://www.kicks.se/sok?search-query=836723;;https://images.matas.dk/encode/7340074735464_1_20260702095500.jpg;1539;836723
 819635;Fenty We’re Even Hydrating Longwear Concealer 35;FENTY;Makeup;C;https://www.kicks.se/sok?search-query=819635;;https://images.matas.dk/encode/840026665551_20231114114216.jpg;1540;819635
-688571;Garnier Moisture Bomb Super Hydra & Energi’ Sheetmask(M) FLP;Garnier;Skin care;A;https://www.kicks.se/sok?search-query=688571;27.0;https://images.matas.dk/encode/688571.jpg;1541;688571
+688571;Garnier Moisture Bomb Super Hydra & Energi’ Sheetmask(M) FLP;Garnier;Skin care;A;https://www.kicks.se/sok?search-query=688571;28.00;https://images.matas.dk/encode/688571.jpg;1541;688571
 827528;DIOR RGE DIOR SATIN 434 INT24;DIOR;Makeup;C;https://www.kicks.se/sok?search-query=827528;;https://images.matas.dk/encode/3348901658836_20231212115302.jpg;1542;827528
 1023545;VA BIR Donna Edp 50 ml + 10 ml Gaveæske Xmas25;Valentino;Fragrances;A;https://www.kicks.se/sok?search-query=1023545;;https://images.matas.dk/encode/3614274680126_20251029180157.jpg;1543;1023545
 957876;LA  Bi-Facil 200 ml Kamp;Lancôme;Skin care;AA;https://www.kicks.se/sok?search-query=957876;;https://images.matas.dk/encode/3605532321370_20250618180442.jpg;1544;957876
@@ -2985,7 +2985,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 839907;Elf Halo Glow Liquid Filter 7 Deep/Rich FLP;e.l.f.;Makeup;C;https://www.kicks.se/sok?search-query=839907;;https://images.matas.dk/encode/609332821194_20240702015520.jpg;2983;839907
 782428;RC A Hint of Summer - The Lotion 150 ml;Rudolph Care;Skin care;C;https://www.kicks.se/sok?search-query=782428;;;2984;782428
 1010725;bMin BarePRO 24H Skin-Perfecting Pressed Powd Medium Deep 40;bareMinerals;Makeup;C;https://www.kicks.se/sok?search-query=1010725;;https://images.matas.dk/encode/194250083996_20250423180620.jpg;2985;1010725
-838640;LSC Revitalift Clinical Vitamin C Hydr Glow Cream 50 ml;L’Oréal Paris;Skin care;C;https://www.kicks.se/sok?search-query=838640;;https://images.matas.dk/encode/3600524193829_20260416180229.jpg;2986;838640
+838640;LSC Revitalift Clinical Vitamin C Hydr Glow Cream 50 ml;L’Oréal Paris;Skin care;C;https://www.kicks.se/sok?search-query=838640;207.00;https://images.matas.dk/encode/3600524193829_20260416180229.jpg;2986;838640
 830580;LU Moisturizing Sheet Mask 5 Gr;Lumene;Skin care;B;https://www.kicks.se/sok?search-query=830580;;https://images.matas.dk/encode/6412600843682_20240820105818.jpg;2987;830580
 94168420;TIRTIR Hydro Boost Enzyme Cleansing Balm 120ml;TIRTIR;Skin care;C;https://www.kicks.se/sok?search-query=94168420;;;2988;94168420
 799439;MAC Locked Kiss Ink Lipcolour Extra Chili;MAC;Makeup;C;https://www.kicks.se/sok?search-query=799439;;https://images.matas.dk/encode/799439_1_20231023133154.jpg;2989;799439
@@ -7339,7 +7339,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 826162;MAC Macstack Legit Lift Lash Primer Stark Stack 12 ml (G);MAC;Makeup;B;https://www.kicks.se/sok?search-query=826162;;https://images.matas.dk/encode/773602688838_20240417154146.jpg;7337;826162
 1021049;YSL Latex Mascara (G);Yves Saint Laurent;Makeup;AA;https://www.kicks.se/sok?search-query=1021049;;https://images.matas.dk/encode/3614274486599_20260126180716.jpg;7338;1021049
 876600;CLI Deep Comfort Body Butter 200ml;Clinique;Skin care;B;https://www.kicks.se/sok?search-query=876600;;;7339;876600
-1034338;Garnier Vita C Fresh & Bright Hydrate Sorbet Cream 85ml (G);Garnier;Skin care;B;https://www.kicks.se/sok?search-query=1034338;;https://images.matas.dk/encode/3600542663038_20260327040157.jpg;7340;1034338
+1034338;Garnier Vita C Fresh & Bright Hydrate Sorbet Cream 85ml (G);Garnier;Skin care;B;https://www.kicks.se/sok?search-query=1034338;62.00;https://images.matas.dk/encode/3600542663038_20260327040157.jpg;7340;1034338
 1008112;NARS Total Seduction Eyeshadow Stick Sparked;NARS;Makeup;C;https://www.kicks.se/sok?search-query=1008112;;https://images.matas.dk/encode/194251151076_20250326180500.jpg;7341;1008112
 1008497;MAC Studio Fix Powder Plus Foundation NC40 12 g;MAC;Makeup;B;https://www.kicks.se/sok?search-query=1008497;;https://images.matas.dk/encode/773602736973_20250519040119.jpg;7342;1008497
 823696;BABOR Moisturizing Eye Gel-Cream 15 ml;BABOR;Skin care;C;https://www.kicks.se/sok?search-query=823696;;https://images.matas.dk/encode/4015165359517_20231214003717.jpg;7343;823696
@@ -20560,7 +20560,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 754478;LOR Brow Artist Plump & Set 101 Blonde;L’Oréal Paris;Makeup;B;https://www.kicks.se/sok?search-query=754478;;https://images.matas.dk/encode/3600523755257_1_20250620180411.jpg;20558;754478
 791436;DR CEURACLE Pro Balance CLEANSING FOAM 150 ml;Dr. Ceuracle;Skin care;C;https://www.kicks.se/sok?search-query=791436;;https://images.matas.dk/encode/8806133613948_20251106180400.jpg;20559;791436
 810176;La Roche-Posay Anthelios Anti Shine Mist SPF50+ 75 ml;La Roche-Posay;Skin care;B;https://www.kicks.se/sok?search-query=810176;;https://images.matas.dk/encode/3337875549530_20250131181039.jpg;20560;810176
-571725;Nivea Essentials Double Effect Makeup Remover 125 ml (G) FLP;Nivea;Skin care;B;https://www.kicks.se/sok?search-query=571725;;https://images.matas.dk/encode/571725_1.jpg;20561;571725
+571725;Nivea Essentials Double Effect Makeup Remover 125 ml (G) FLP;Nivea;Skin care;B;https://www.kicks.se/sok?search-query=571725;41.00;https://images.matas.dk/encode/571725_1.jpg;20561;571725
 1018489;Kiko Milano Long Lasting Eyeshadow Stick 27;Kiko Milano;Makeup;C;https://www.kicks.se/sok?search-query=1018489;;https://images.matas.dk/encode/8059385004563_20250409180800.jpg;20562;1018489
 1036518;amika: Perk Up Ultra Oil Control Dry Shampoo 115 ml;amika:;Hair care and styling;C;https://www.kicks.se/sok?search-query=1036518;;https://images.matas.dk/encode/840117815438_20260310180300.jpg;20563;1036518
 769086;Anastasia Brush A30;Anastasia Beverly Hills;Makeup;C;https://www.kicks.se/sok?search-query=769086;;https://images.matas.dk/encode/689304286305_20251023181400.jpg;20564;769086
@@ -23324,7 +23324,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 1011967;Gisada Ambassadora Edp 50 ml;Gisada;Fragrances;C;https://www.kicks.se/sok?search-query=1011967;;https://images.matas.dk/encode/7640164030821_20241120182000.jpg;23322;1011967
 793337;Dr. Barbara Sturm Lifting Serum 30 ml;Dr. Barbara Sturm;Skin care;C;https://www.kicks.se/sok?search-query=793337;;;23323;793337
 826279;MAC Studio Fix Fluid Broad Spectrum Spf 15 Nc58 30 ml (W);MAC;Makeup;C;https://www.kicks.se/sok?search-query=826279;;https://images.matas.dk/encode/773602643349_20240416120357.jpg;23324;826279
-781949;Garnier Vitamin C Serum 30 ml FLP;Garnier;Skin care;A;https://www.kicks.se/sok?search-query=781949;;https://images.matas.dk/encode/3600542453189_20260615180508.jpg;23325;781949
+781949;Garnier Vitamin C Serum 30 ml FLP;Garnier;Skin care;A;https://www.kicks.se/sok?search-query=781949;129.00;https://images.matas.dk/encode/3600542453189_20260615180508.jpg;23325;781949
 638845;ALL OVER FACE COLOR Loose Bronzer;bareMinerals;Makeup;A;https://www.kicks.se/sok?search-query=638845;;https://images.matas.dk/encode/98132160655_20240115174843.jpg;23326;638845
 825172;EL Pure Color Explicit Slick Shine Lip 419 Playtime 0.7;Estée Lauder;Makeup;C;https://www.kicks.se/sok?search-query=825172;;https://images.matas.dk/encode/887167709898_20240501091807.jpg;23327;825172
 802481;KMS HairPlay Dry Texture Spray 250ml;kms;Hair care and styling;C;https://www.kicks.se/sok?search-query=802481;;https://images.matas.dk/encode/802481_1_20231024093059.jpg;23328;802481
@@ -25335,7 +25335,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 1010212;Karl Lagerfeld Jeans Urban Blue EDT 100 ml;Karl Lagerfeld;Fragrances;C;https://www.kicks.se/sok?search-query=1010212;;https://images.matas.dk/encode/3386460160292_20250131181600.jpg;25333;1010212
 1034357;HUFS Arctic Shampoo 250ml;HUFS;Hair care and styling;C;https://www.kicks.se/sok?search-query=1034357;;https://images.matas.dk/encode/7090050870046_20251128122600.jpg;25334;1034357
 788897;Dermalogica Phyto-Nature Firming Serum 40 ml;Dermalogica;Skin care;C;https://www.kicks.se/sok?search-query=788897;;https://images.matas.dk/encode/666151062252_20260703115400.jpg;25335;788897
-829017;Garnier SkinActive Vitamin C Day Cream SPF50+ Glow FLP;Garnier;Skin care;C;https://www.kicks.se/sok?search-query=829017;;https://images.matas.dk/encode/3600542596077_20260619180425.jpg;25336;829017
+829017;Garnier SkinActive Vitamin C Day Cream SPF50+ Glow FLP;Garnier;Skin care;C;https://www.kicks.se/sok?search-query=829017;144.00;https://images.matas.dk/encode/3600542596077_20260619180425.jpg;25336;829017
 1004344;NARS Pure Radiant Tinted Moisturizer SPF30 Alaska 50ml;NARS;Makeup;C;https://www.kicks.se/sok?search-query=1004344;;https://images.matas.dk/encode/607845023647_1_20240827155841.jpg;25337;1004344
 806793;Color Wow Root Cover Up Black 2,1 g;Color Wow;Hair care and styling;B;https://www.kicks.se/sok?search-query=806793;;https://images.matas.dk/encode/806793_1_20231024070216.jpg;25338;806793
 827481;DIOR RGE DIOR NEW VELVET 429 INT24;DIOR;Makeup;C;https://www.kicks.se/sok?search-query=827481;;https://images.matas.dk/encode/3348901692120_20231212124034.jpg;25339;827481
