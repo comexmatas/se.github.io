@@ -1518,7 +1518,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 843241;Preference Recital 7.4 Mango Copper FLP;L’Oréal Paris;Hair care and styling;C;https://www.kicks.se/sok?search-query=843241;;https://images.matas.dk/encode/3600524199012_20250116181200.jpg;1516;843241
 1004571;NARS Powermatte Lipstick Indiscreet;NARS;Makeup;C;https://www.kicks.se/sok?search-query=1004571;;https://images.matas.dk/encode/194251133560_1_20240827115642.jpg;1517;1004571
 801452;LA TIU Wear 24h Longwear Foundation 225N );Lancôme;Makeup;C;https://www.kicks.se/sok?search-query=801452;;https://images.matas.dk/encode/3614273792509_20260422180326.jpg;1518;801452
-768130;Bioderma Sebium H2O 500 Ml (X) FLP;Bioderma;Skin care;C;https://www.kicks.se/sok?search-query=768130;;https://images.matas.dk/encode/3701129812013_20260304130500.jpg;1519;768130
+768130;Bioderma Sebium H2O 500 Ml (X) FLP;Bioderma;Skin care;C;https://www.kicks.se/sok?search-query=768130;185.00;https://images.matas.dk/encode/3701129812013_20260304130500.jpg;1519;768130
 1029521;CL Extra-Firming Day Cream AST Energy Refill 50 ml;Clarins;Skin care;C;https://www.kicks.se/sok?search-query=1029521;;https://images.matas.dk/encode/3666057381898_20260217180200.jpg;1520;1029521
 839759;Elf Lip Plumping Gloss Sparkling Rosé FLP;e.l.f.;Makeup;C;https://www.kicks.se/sok?search-query=839759;;https://images.matas.dk/encode/609332824539_20241106180609.jpg;1521;839759
 832223;SKIN1004 Madagascar Centella Air-Fit Suncream Plus 50 ml;SKIN1004;Skin care;C;https://www.kicks.se/sok?search-query=832223;;https://images.matas.dk/encode/8809576261301_20240109104134.jpg;1522;832223
@@ -8732,7 +8732,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 825409;GA Acqua Di Gioia Intense Edp 50 ml;Armani;Fragrances;B;https://www.kicks.se/sok?search-query=825409;;https://images.matas.dk/encode/3614274091908_20250715181149.jpg;8730;825409
 801487;LA TIU Wear 24h Longwear Foundation 425C;Lancôme;Makeup;B;https://www.kicks.se/sok?search-query=801487;;https://images.matas.dk/encode/3614273792714_20260423040304.jpg;8731;801487
 872402;GOSH Eyeliner Kohl White;Gosh Copenhagen;Makeup;C;https://www.kicks.se/sok?search-query=872402;;https://images.matas.dk/encode/872402_1.jpg;8732;872402
-844008;Bioderma Sensibio H2O 500 ml FLP;Bioderma;Skin care;B;https://www.kicks.se/sok?search-query=844008;;https://images.matas.dk/encode/3701129812105_20260304130500.jpg;8733;844008
+844008;Bioderma Sensibio H2O 500 ml FLP;Bioderma;Skin care;B;https://www.kicks.se/sok?search-query=844008;185.00;https://images.matas.dk/encode/3701129812105_20260304130500.jpg;8733;844008
 1029334;Fenty Cream Bronzer 2,0 Shade 1 15 g (G);FENTY;Makeup;C;https://www.kicks.se/sok?search-query=1029334;;https://images.matas.dk/encode/840026682985_20260508180100.jpg;8734;1029334
 769994;GUERLAIN Shalimar Eau de Toilette 50 ml (W);Guerlain;Fragrances;C;https://www.kicks.se/sok?search-query=769994;;https://images.matas.dk/encode/3346470113619_20250411040200.jpg;8735;769994
 687851;GOSH Eyeliner Kohl 005 Nude (G);Gosh Copenhagen;Makeup;C;https://www.kicks.se/sok?search-query=687851;;https://images.matas.dk/encode/687851_1.jpg;8736;687851
@@ -16185,7 +16185,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 1025079;Fenty Limited Edition Gaveæske Plush Puddin  Xmas25;FENTY;Skin care;C;https://www.kicks.se/sok?search-query=1025079;;https://images.matas.dk/encode/840026686709_20250924121700.jpg;16183;1025079
 790750;Löwengrip The Cure Repair & Shine Hair Mask 200 ml;Löwengrip;Hair care and styling;C;https://www.kicks.se/sok?search-query=790750;;;16184;790750
 1036350;Depend Design Selection French White Chrome Short Coffin;Depend;Makeup;C;https://www.kicks.se/sok?search-query=1036350;;https://images.matas.dk/encode/7391715802236_20260107181400.jpg;16185;1036350
-582441;MAY Mascara Volum’ Express Colossal Glam (P) FLP;Maybelline;Makeup;A;https://www.kicks.se/sok?search-query=582441;99.0;https://images.matas.dk/encode/582441_1.jpg;16186;582441
+582441;MAY Mascara Volum’ Express Colossal Glam (P) FLP;Maybelline;Makeup;A;https://www.kicks.se/sok?search-query=582441;106.00;https://images.matas.dk/encode/582441_1.jpg;16186;582441
 1026529;Too Faced BTW Super Coverage Concealer Cookie 13,5 ml;Too Faced;Makeup;C;https://www.kicks.se/sok?search-query=1026529;;;16187;1026529
 826197;MAC Macximal Silky Matte Lipstick Marrakesh 3.50 g;MAC;Makeup;C;https://www.kicks.se/sok?search-query=826197;;https://images.matas.dk/encode/773602684854_20240313013627.jpg;16188;826197
 797439;Maria Nila C&S BOOSTER MASQUE HEAD & HEAL 50ml;Maria Nila;Hair care and styling;C;https://www.kicks.se/sok?search-query=797439;;;16189;797439
@@ -21962,7 +21962,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 750999;ITC Bye Bye Under Eye Concealer Medium Bronze;IT Cosmetics;Makeup;C;https://www.kicks.se/sok?search-query=750999;;https://images.matas.dk/encode/750999_Swatch_20231027173323.jpg;21960;750999
 812938;Laura Mercier Real Flawless Foundation 3C1 dune;Laura Mercier;Makeup;C;https://www.kicks.se/sok?search-query=812938;;https://images.matas.dk/encode/194250010572_20250319180433.jpg;21961;812938
 727241;ABC Intim Balm 100 ml (G);Australian Bodycare;Personal care;C;https://www.kicks.se/sok?search-query=727241;;https://images.matas.dk/encode/727241_20231128093928.jpg;21962;727241
-665623;MAY Mascara Volum’ Express Lash Sens’ Very Black (P) FLP;Maybelline;Makeup;AA;https://www.kicks.se/sok?search-query=665623;;https://images.matas.dk/encode/3600531143459_0_20240808082443.jpg;21963;665623
+665623;MAY Mascara Volum’ Express Lash Sens’ Very Black (P) FLP;Maybelline;Makeup;AA;https://www.kicks.se/sok?search-query=665623;137.00;https://images.matas.dk/encode/3600531143459_0_20240808082443.jpg;21963;665623
 1004489;NARS Climax Extreme Mascara 7g;NARS;Makeup;C;https://www.kicks.se/sok?search-query=1004489;;https://images.matas.dk/encode/607845070306_1_20240816115945.jpg;21964;1004489
 831752;Molton Brown Coastal Cypress & Sea Fennel Bath & Shower Gel;Molton Brown;Skin care;C;https://www.kicks.se/sok?search-query=831752;;https://images.matas.dk/encode/5030805003062_20241001164610.jpg;21965;831752
 1010708;bMin BarePRO 24H Skin-Perfecting Pressed Powd Fair 15 Warm;bareMinerals;Makeup;C;https://www.kicks.se/sok?search-query=1010708;;https://images.matas.dk/encode/194250083828_20250423180515.jpg;21966;1010708
