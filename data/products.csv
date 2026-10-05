@@ -5876,7 +5876,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 794266;Aveda Shampure Conditioner 1000 ml;Aveda;Hair care and styling;C;https://www.kicks.se/sok?search-query=794266;;https://images.matas.dk/encode/018084998090_20260128093900.jpg;5874;794266
 842525;B&B Hairdressers Long Last Styling Cream 200 ml;Bumble and bumble;Hair care and styling;C;https://www.kicks.se/sok?search-query=842525;;https://images.matas.dk/encode/685428032408_20250910180737.jpg;5875;842525
 89718228;Aqua Di Parma Colonia Pura EdC 180 ml;Acqua di Parma;Fragrances;C;https://www.kicks.se/sok?search-query=89718228;;https://images.matas.dk/encode/89718228_20250711141600.jpg;5876;89718228
-94081723;IsaDora Blush Stick 40 Soft Pink;IsaDora;Makeup;AA;https://www.kicks.se/sok?search-query=94081723;;https://images.matas.dk/encode/94081723_20250717164300.jpg;5877;94081723
+94081723;IsaDora Blush Stick 40 Soft Pink;IsaDora;Makeup;AA;https://www.kicks.se/sok?search-query=94081723;129.00;https://images.matas.dk/encode/94081723_20250717164300.jpg;5877;94081723
 1033613;essie Glass Nails Neglelak 10 Highballer 13,5 ml;essie;Makeup;A;https://www.kicks.se/sok?search-query=1033613;;https://images.matas.dk/encode/30197329_20260917182545.jpg;5878;1033613
 94170814;Umberto Giannini 60 Second Curls Moisture Mask 200 ml;Umberto Giannini;Hair care and styling;C;https://www.kicks.se/sok?search-query=94170814;;https://images.matas.dk/encode/94170814_1_20260702150500.jpg;5879;94170814
 803308;DIOR BCKST FACE/BODY FDT FL 3CR INT23 );DIOR;Makeup;C;https://www.kicks.se/sok?search-query=803308;;;5880;803308
@@ -8414,7 +8414,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 94128338;Augustinus Bader The Hydrogel Facemask 1 pcs;Augustinus Bader;Medicare;C;https://www.kicks.se/sok?search-query=94128338;;https://images.matas.dk/encode/94128338_20250721121900.jpg;8412;94128338
 864262;Kenzo Flower EDP 50 Ml;Kenzo;Fragrances;C;https://www.kicks.se/sok?search-query=864262;;https://images.matas.dk/encode/864262_1.jpg;8413;864262
 642885;Moroccanoil Moisture Repair Shampoo 250 ml.;Moroccanoil;Hair care and styling;A;https://www.kicks.se/sok?search-query=642885;;https://images.matas.dk/encode/7290011521196.jpg;8414;642885
-836136;IsaDora Glow Face Primer 30 ML;IsaDora;Makeup;A;https://www.kicks.se/sok?search-query=836136;;https://images.matas.dk/encode/7317852145012_20240704133623.jpg;8415;836136
+836136;IsaDora Glow Face Primer 30 ML;IsaDora;Makeup;A;https://www.kicks.se/sok?search-query=836136;159.00;https://images.matas.dk/encode/7317852145012_20240704133623.jpg;8415;836136
 710667;Dior Diorissimo EDT 50 ml (M);DIOR;Fragrances;;https://www.kicks.se/sok?search-query=710667;;;8416;710667
 1012238;Round Lab Birch Juice Moisturizing Serum 50 ml;Round Lab;Skin care;C;https://www.kicks.se/sok?search-query=1012238;;https://images.matas.dk/encode/8809782553009_1_20260813180215.jpg;8417;1012238
 689096;Sisley Sisleÿa Le Teint 0C Vanilla 30 Ml;Sisley;Makeup;C;https://www.kicks.se/sok?search-query=689096;;;8418;689096
@@ -20505,7 +20505,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 705265;CH Allure Edt Spray 50 Ml;CHANEL;Fragrances;;https://www.kicks.se/sok?search-query=705265;;;20503;705265
 725264;Dermalogica Multi Active Toner 50 ml;Dermalogica;Skin care;C;https://www.kicks.se/sok?search-query=725264;;https://images.matas.dk/encode/666151020092_20260703115400.jpg;20504;725264
 94160843;Wella Professionals Ultimate Color Shampoo 250ml;Wella Professionals;Hair care and styling;C;https://www.kicks.se/sok?search-query=94160843;;https://images.matas.dk/encode/94160843_20260128140900.jpg;20505;94160843
-94104432;IsaDora Powder Blush 07 Cool Pink;IsaDora;Makeup;A;https://www.kicks.se/sok?search-query=94104432;;https://images.matas.dk/encode/94104432_20250718130400.jpg;20506;94104432
+94104432;IsaDora Powder Blush 07 Cool Pink;IsaDora;Makeup;A;https://www.kicks.se/sok?search-query=94104432;136.00;https://images.matas.dk/encode/94104432_20250718130400.jpg;20506;94104432
 10359968;KIKO MilanoUnlimited Blush10Warm Mauve6 g;Kiko Milano;Makeup;C;https://www.kicks.se/sok?search-query=10359968;;https://images.matas.dk/encode/8059385028606_20260427182600.jpg;20507;10359968
 94147881;Charlotte Tilbury Hollywood Glow Glide Architect Highlighter Champagne Glow;Charlotte Tilbury;Makeup;C;https://www.kicks.se/sok?search-query=94147881;;https://images.matas.dk/encode/94147881_20250827152600.jpg;20508;94147881
 837919;Redken Acidic Color Gloss Conditioner 500 ml;Redken;Hair care and styling;C;https://www.kicks.se/sok?search-query=837919;;https://images.matas.dk/encode/837919_20240523143641.jpg;20509;837919
@@ -27455,7 +27455,7 @@ Product ID;Product;Brand;Category;pricing_role_category;URL;Price;Image URL;__ro
 827043;Fenty Soft Lit Luminous Foundation 130;FENTY;Makeup;C;https://www.kicks.se/sok?search-query=827043;;https://images.matas.dk/encode/840026671019_20250808180529.jpg;27453;827043
 780714;YSL All Hours Fdt Reno Mn9;Yves Saint Laurent;Makeup;C;https://www.kicks.se/sok?search-query=780714;;https://images.matas.dk/encode/3614273714518_20260226180658.jpg;27454;780714
 831300;Briogeo Scalp Revival™ Charcoal Detox Spray 120ml;Briogeo;Hair care and styling;C;https://www.kicks.se/sok?search-query=831300;;https://images.matas.dk/encode/644216872381_20250924181000.jpg;27455;831300
-94104376;IsaDora No Compromise Matte Powder 67 Warm Tan;IsaDora;Makeup;A;https://www.kicks.se/sok?search-query=94104376;;https://images.matas.dk/encode/94104376_20250718124500.jpg;27456;94104376
+94104376;IsaDora No Compromise Matte Powder 67 Warm Tan;IsaDora;Makeup;A;https://www.kicks.se/sok?search-query=94104376;169.00;https://images.matas.dk/encode/94104376_20250718124500.jpg;27456;94104376
 1015283;FUGAZZI Orange Crush EDP 50 ml (G);FUGAZZI;Fragrances;C;https://www.kicks.se/sok?search-query=1015283;;https://images.matas.dk/encode/8717496450036_20250401124400.jpg;27457;1015283
 780763;KI Ultra Facial Toner 500 ML Big Size;Kiehl’s;Skin care;C;https://www.kicks.se/sok?search-query=780763;;https://images.matas.dk/encode/780763_1_20231023220019.jpg;27458;780763
 94151069;Morphe Nano Brow Pencil Latte;Morphe;Makeup;C;https://www.kicks.se/sok?search-query=94151069;;https://images.matas.dk/encode/94151069_20250912132300.jpg;27459;94151069
